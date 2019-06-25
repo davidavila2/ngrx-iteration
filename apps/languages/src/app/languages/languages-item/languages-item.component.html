@@ -1,0 +1,12 @@
+<div *ngIf="homeItem$ | async as homeItem" class="d-flex justify-content-center align-self-center m-auto">
+  <mat-card class="d-flex justify-content-center flex-column align-items-center">
+    <mat-card-header>
+      <mat-card-title>
+        <p class="text-center">{{homeItem.name}}</p>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <p class="text-center">{{homeItem.description}}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
