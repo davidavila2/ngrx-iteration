@@ -16,8 +16,10 @@ import  {
   MatSnackBarModule,
   MatTableModule,
   MatToolbarModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatPaginatorModule, MatSortModule
 }  from  '@angular/material';
+import { HeroesListComponent } from './heroes-list/heroes-list.component';
 
 @NgModule({
   imports: [
@@ -37,7 +39,9 @@ import  {
     MatSnackBarModule,
     MatTableModule,
     MatToolbarModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -56,7 +60,10 @@ import  {
     MatSnackBarModule,
     MatTableModule,
     MatToolbarModule,
-    MatButtonToggleModule
-  ]
+    MatButtonToggleModule,
+    MatPaginatorModule,
+    HeroesListComponent
+  ],
+  declarations: [HeroesListComponent]
 })
 export class MaterialModule {}

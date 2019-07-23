@@ -1,0 +1,15 @@
+<div>
+  <mat-card *ngFor="let one of (onepiece$ | async).items">
+    <mat-card-header class="justify-content-center">
+      <mat-card-title>
+        <p>{{one.chapter}}</p>
+        <p>{{one.character}}</p>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="d-flex flex-column justify-content-center align-items-center">
+      <img src={{one.cover_images}}>
+      <p>{{one.theories}}</p>
+      <p>{{one.summary}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

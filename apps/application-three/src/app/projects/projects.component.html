@@ -1,0 +1,19 @@
+<div class="w-100 d-flex flex-wrap m-auto">
+  <div *ngFor="let character of pokemon$ | async" class="d-flex justify-content-around m-0">
+    <div class="d-flex mw-fixed mx-5">
+      <mat-card class="w-100">
+        <p class="text-center">{{character.id}}</p>
+        <mat-card-header class="justify-content-center">
+          <mat-card-title>
+            <h1 class="m-0" class="text-primary">
+              {{character.name}}
+            </h1>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="d-flex justify-content-center">
+          <img src={{character.sprites.front_default}}>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

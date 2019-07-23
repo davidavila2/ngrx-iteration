@@ -28,6 +28,69 @@
     },
     "wild-card": {
       "tags": []
+    },
+    "power-rangers": {
+      "tags": []
+    },
+    "power-rangers-e2e": {
+      "tags": []
+    },
+    "dashboard": {
+      "tags": []
+    },
+    "dashboard-e2e": {
+      "tags": []
+    },
+    "icons": {
+      "tags": []
+    },
+    "icons-e2e": {
+      "tags": []
+    },
+    "core-state": {
+      "tags": []
+    },
+    "application-three": {
+      "tags": []
+    },
+    "application-three-e2e": {
+      "tags": []
+    },
+    "app-four": {
+      "tags": []
+    },
+    "app-four-e2e": {
+      "tags": []
+    },
+    "marvel": {
+      "tags": []
+    },
+    "marvel-e2e": {
+      "tags": []
+    },
+    "app-five": {
+      "tags": []
+    },
+    "app-five-e2e": {
+      "tags": []
+    },
+    "onepiece": {
+      "tags": []
+    },
+    "onepiece-e2e": {
+      "tags": []
+    },
+    "yugioh": {
+      "tags": []
+    },
+    "yugioh-e2e": {
+      "tags": []
+    },
+    "app-eight": {
+      "tags": []
+    },
+    "app-eight-e2e": {
+      "tags": []
     }
   }
 }

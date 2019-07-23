@@ -1,0 +1,31 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+    <div class="d-flex flex-column">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let row" class="mw-25">
+        {{row.name}}
+        <span>{{row.description}}</span>
+      </td>
+      
+    </ng-container>
+
+    <!-- Thumbnail Column -->
+    <ng-container matColumnDef="thumbnail">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Thumbnail</th>
+      <td mat-cell *matCellDef="let row">
+        <div class="d-flex flex-column">
+          <img src="{{row.thumbnail.path}}.{{row.thumbnail.extension}}" class="fixed-img" />
+        </div>
+      </td>
+    </ng-container>
+  </div>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+<p class="float-right">"Data provided by Marvel. © 2014 Marvel"</p>
+  <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="5"
+    [pageSizeOptions]="[10, 25, 50, 100]">
+  </mat-paginator>
+</div>

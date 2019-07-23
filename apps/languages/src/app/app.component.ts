@@ -8,6 +8,7 @@ import { AuthService } from '@workspace/core-data';
 })
 export class AppComponent {
   title = 'Randoms';
+  
   links = [
     { path: '/languages', icon: 'home', title: 'Home' },
     { path: '/login', icon: 'person', title: 'Login' }

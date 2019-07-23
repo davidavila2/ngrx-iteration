@@ -1,0 +1,24 @@
+<!-- <div *ngFor="let it of (yugioh$ | async)?.card">
+  <p>{{it.name}}</p>
+</div>
+<div *ngFor="let it of (yugioh$ | async)">
+  <div *ngFor="let card of it">
+    {{card.name}}
+  </div>
+</div> -->
+
+<div class="d-flex flex-wrap">
+  <mat-card *ngFor="let it of (yugioh$ | async).results" class="w-25">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>{{it.name}}</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img src={{it.image}} class="fixed-image">
+      <h3>{{it.status}}</h3>
+      <h3>{{it.gender}}</h3>
+      <h3>{{it.origin.name}}</h3>
+    </mat-card-content>
+  </mat-card>
+</div>

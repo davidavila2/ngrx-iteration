@@ -22,7 +22,7 @@ import { TokenInterceptorService } from './auth/token-interceptor.service';
     }
   ],
   exports: [
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class CoreDataModule {}
