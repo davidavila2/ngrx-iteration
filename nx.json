@@ -91,6 +91,18 @@
     },
     "app-eight-e2e": {
       "tags": []
+    },
+    "app-nine": {
+      "tags": []
+    },
+    "app-nine-e2e": {
+      "tags": []
+    },
+    "app-ten": {
+      "tags": []
+    },
+    "app-ten-e2e": {
+      "tags": []
     }
   }
 }

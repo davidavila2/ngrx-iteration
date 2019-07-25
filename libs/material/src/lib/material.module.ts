@@ -17,6 +17,7 @@ import  {
   MatTableModule,
   MatToolbarModule,
   MatButtonToggleModule,
+  MatDialogModule,
   MatPaginatorModule, MatSortModule
 }  from  '@angular/material';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
@@ -41,7 +42,8 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     MatToolbarModule,
     MatButtonToggleModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -62,7 +64,8 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     MatToolbarModule,
     MatButtonToggleModule,
     MatPaginatorModule,
-    HeroesListComponent
+    HeroesListComponent,
+    MatDialogModule
   ],
   declarations: [HeroesListComponent]
 })
