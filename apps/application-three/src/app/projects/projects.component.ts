@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '@workspace/core-data';
+import { PokeDetails, PokeResource } from '@workspace/core-data';
+import { Observable } from 'rxjs';
+import { PokemonFacade } from '@workspace/core-state'
 
 @Component({
   selector: 'app-projects',
@@ -7,16 +9,48 @@ import { PokemonService } from '@workspace/core-data';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  pokemon$;
+  pokemon$: Observable<PokeDetails[]> = this.pokemonFacade.pokemon$;
+  // currentPokemon$: Observable<PokeDetails> = this.pokemonFacade.currentPokemon$;
+  isLoading$: Observable<boolean> = this.pokemonFacade.isPokemonLoading$
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonFacade: PokemonFacade) {}
 
   ngOnInit() {
-    this.getPokemon();
+    this.pokemonFacade.loadPokemon();
   }
 
-  getPokemon() {
-    this.pokemon$ = this.pokemonService.all();
+  selectPokemon(pokemon) {
+    this.pokemonFacade.selectPokemon(pokemon.id)
   }
+
+  savePokemon(pokemon) {
+    pokemon.id ?
+      this.pokemonFacade.updatePokemon(pokemon) :
+      this.pokemonFacade.createPokemon(pokemon)
+  }
+
+  updatePokemon(pokemon) {
+    this.pokemonFacade.updatePokemon(pokemon)
+  }
+
+  createPokemon(pokemon) {
+    this.pokemonFacade.createPokemon(pokemon)
+  }
+
+  deletePokemon(pokemon) {
+    this.pokemonFacade.deletePokemon(pokemon)
+  }
+
+  // pokemon$;
+
+  // constructor(private pokemonService: PokemonService) { }
+
+  // ngOnInit() {
+  //   this.getPokemon();
+  // }
+
+  // getPokemon() {
+  //   this.pokemon$ = this.pokemonService.all();
+  // }
 
 }

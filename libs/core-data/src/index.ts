@@ -1,6 +1,5 @@
 export { CoreDataModule } from './lib/core-data.module';
 
-
 // Authentication
 export { AuthGuard } from './lib/auth/auth.guard';
 export { AuthService } from './lib/auth/auth.service';
@@ -18,7 +17,7 @@ export { Icons } from './lib/logos/logo'
 
 // Pokemon
 export { PokemonService } from './lib/pokemon/pokemon.service';
-export { PokeResource, PokeDetails } from './lib/pokemon/pokemon';
+export { PokeResource, PokeDetails, emptyPokemon} from './lib/pokemon/pokemon';
 
 // Starwars
 export { Amiibo, AmiiboResults } from './lib/amiibo/starwars';

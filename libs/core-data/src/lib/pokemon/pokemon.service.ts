@@ -14,6 +14,22 @@ export class PokemonService {
 
   constructor(private httpClient: HttpClient) { }
 
+  create(pokemon) {
+    return this.httpClient.post(this.getUrl(), pokemon)
+  }
+
+  getUrlForId(id) {
+    return `${this.getUrl()}/${id}`
+  }
+
+  update(pokemon) {
+    return this.httpClient.patch(this.getUrlForId(pokemon.id), pokemon)
+  }
+
+  delete(pokemonId) {
+    return this.httpClient.delete(this.getUrlForId(pokemonId))
+  }
+
   all(): Observable<any> {
     return this.httpClient.get(this.getUrl()).pipe(
       map((originalPokeResponse: PokeResource) => originalPokeResponse.results),

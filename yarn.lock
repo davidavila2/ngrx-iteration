@@ -485,25 +485,25 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
-"@ngrx/effects@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-8.1.0.tgz#76245d6d8658fbe84d610ade4016cc7d6091d09a"
+"@ngrx/effects@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-8.2.0.tgz#6aec4920d2b363c2c2b093c482e0bd2bb7ecdba2"
 
-"@ngrx/entity@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-8.1.0.tgz#2856121a288ef850e39c851edd39a6619d2d8910"
+"@ngrx/entity@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-8.2.0.tgz#0e605f7ed733f6fdec614bf2b8bac3f654db7579"
 
-"@ngrx/router-store@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-8.1.0.tgz#04d58c783a7a9a70676c37ab78e27f86675b19f6"
+"@ngrx/router-store@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-8.2.0.tgz#c379f68fb0d9cafb1432434227e1ab90e243d3a8"
 
-"@ngrx/store-devtools@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-8.1.0.tgz#b720be01c5d3a7250f33429767c6ae792a2b8de7"
+"@ngrx/store-devtools@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-8.2.0.tgz#32a29f20ee53da64bead63a84cf27b5d12d2d9a1"
 
-"@ngrx/store@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.1.0.tgz#2ef648c591b2a56529a40ab3081327c49fb8ca93"
+"@ngrx/store@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.2.0.tgz#8374fa803babdbf2a599240a8e546fa726d83edd"
 
 "@ngtools/webpack@7.3.9":
   version "7.3.9"

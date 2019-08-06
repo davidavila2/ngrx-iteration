@@ -16,3 +16,8 @@ export interface PokeDetails {
 export interface PokeImg {
   front_default: string
 }
+
+export const emptyPokemon = {
+  id: null,
+  name: '',
+}

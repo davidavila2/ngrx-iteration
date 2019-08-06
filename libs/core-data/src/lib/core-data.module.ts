@@ -4,17 +4,19 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthService } from './auth/auth.service';
 import { ItemsService } from './items/items.service';
+import { PokemonService } from './pokemon/pokemon.service';
 import { TokenInterceptorService } from './auth/token-interceptor.service';
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     HttpClientModule
   ],
   providers: [
     AuthGuard,
     AuthService,
     ItemsService,
+    PokemonService,
     { 
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,

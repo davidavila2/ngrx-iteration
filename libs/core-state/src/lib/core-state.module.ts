@@ -6,6 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { NxModule } from '@nrwl/nx';
 import { reducers } from '.';
 import { IconEffects } from './icons/icons.effects';
+import { PokemonEffects } from './pokemon-ngrx/pokemon.effects';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { IconEffects } from './icons/icons.effects';
       maxAge: 10
     }),
     EffectsModule.forRoot([
-      IconEffects
+      IconEffects,
+      PokemonEffects
     ]),
   ]
 })

@@ -103,6 +103,9 @@
     },
     "app-ten-e2e": {
       "tags": []
+    },
+    "pokemon-ngrx": {
+      "tags": []
     }
   }
 }
