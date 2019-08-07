@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StarwarsService } from '@workspace/core-data';
+import { Amiibo } from '@workspace/core-data';
+import { Observable } from 'rxjs';
+import { AmiiboFacade } from '@workspace/core-state';
 
 @Component({
   selector: 'workspace-projects',
@@ -7,16 +9,49 @@ import { StarwarsService } from '@workspace/core-data';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  amiiboResults$;
+  amiibos$: Observable<Amiibo[]> = this.amiiboFacade.amiibo$;
+  currentAmiibo$: Observable<Amiibo> = this.amiiboFacade.currentAmiibo$;
+  isLoading$: Observable<boolean> = this.amiiboFacade.isAmiibosLoading$;
 
-  constructor(private starwarsService: StarwarsService) { }
+  constructor(private amiiboFacade: AmiiboFacade) { }
 
   ngOnInit() {
-    this.getProjects();
+    this.amiiboFacade.loadAmiibo();
+    this.amiibos$ = this.amiiboFacade.amiibo$;
   }
 
-  getProjects() {
-    this.amiiboResults$ = this.starwarsService.all();
+  selectAmiibo(amiibo) {
+    this.amiiboFacade.selectAmiibo(amiibo.image)
   }
+
+  saveAmiibo(amiibo) {
+    amiibo.image ?
+      this.amiiboFacade.updateAmiibo(amiibo) :
+      this.amiiboFacade.createAmiibo(amiibo)
+  }
+
+  updateAmiibo(amiibo) {
+    this.amiiboFacade.updateAmiibo(amiibo)
+  }
+
+  createAmiibo(amiibo) {
+    this.amiiboFacade.createAmiibo(amiibo);
+  }
+
+  deleteAmiibo(amiibo) {
+    this.amiiboFacade.deleteAmiibo(amiibo)
+  }
+
+  // amiiboResults$;
+
+  // constructor(private amiiboService: AmiiboService) { }
+
+  // ngOnInit() {
+  //   this.getProjects();
+  // }
+
+  // getProjects() {
+  //   this.amiiboResults$ = this.amiiboService.all();
+  // }
 
 }

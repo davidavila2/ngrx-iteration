@@ -19,9 +19,9 @@ export { Icons } from './lib/logos/logo'
 export { PokemonService } from './lib/pokemon/pokemon.service';
 export { PokeResource, PokeDetails, emptyPokemon} from './lib/pokemon/pokemon';
 
-// Starwars
-export { Amiibo, AmiiboResults } from './lib/amiibo/starwars';
-export { StarwarsService } from './lib/amiibo/starwars.service';
+// Amiibo
+export { Amiibo, AmiiboResults, emptyAmiibo } from './lib/amiibo/amiibo';
+export { AmiiboService } from './lib/amiibo/amiibo.service';
 
 // Marvel 
 export { Marvel, Marvelresults, MarvelCharacters } from './lib/marvel/marvel';

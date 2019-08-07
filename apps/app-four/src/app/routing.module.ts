@@ -6,7 +6,8 @@ import { LoginComponent } from '@workspace/ui-login';
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'projects' }
 ]
 
 @NgModule({

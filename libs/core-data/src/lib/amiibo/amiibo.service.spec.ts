@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { StarwarsService } from './starwars.service';
+import { AmiiboService } from './amiibo.service';
 
-describe('StarwarsService', () => {
+describe('AmiiboService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: StarwarsService = TestBed.get(StarwarsService);
+    const service: AmiiboService = TestBed.get(AmiiboService);
     expect(service).toBeTruthy();
   });
 });

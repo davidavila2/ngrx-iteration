@@ -9,3 +9,11 @@ export interface Amiibo {
   image: string,
   name: string
 }
+
+export const emptyAmiibo = {
+  amiiboSeries: '',
+  character: '',
+  gameSeries: '',
+  image: '',
+  name: ''
+}

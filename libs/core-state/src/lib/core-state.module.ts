@@ -7,11 +7,12 @@ import { NxModule } from '@nrwl/nx';
 import { reducers } from '.';
 import { IconEffects } from './icons/icons.effects';
 import { PokemonEffects } from './pokemon-ngrx/pokemon.effects';
+import { AmiiboEffects } from './amiibo-ngrx/amiibo.effects';
 
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     NxModule.forRoot(),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
@@ -19,7 +20,8 @@ import { PokemonEffects } from './pokemon-ngrx/pokemon.effects';
     }),
     EffectsModule.forRoot([
       IconEffects,
-      PokemonEffects
+      PokemonEffects,
+      AmiiboEffects
     ]),
   ]
 })

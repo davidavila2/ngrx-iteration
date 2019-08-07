@@ -20,7 +20,7 @@ import { WildCardModule } from '@workspace/wild-card';
     ProjectsComponent
   ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     MaterialModule,
     CoreDataModule,
     CoreStateModule,

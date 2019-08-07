@@ -1,12 +1,12 @@
-<div class="w-100 h-100 flex-wrap d-flex pt-1 px-1">
-  <mat-card *ngFor="let item of (amiiboResults$ | async)?.amiibo" class="w-25 fixed-size justify-content-center mx-1">
-    <mat-card-header>
+<div class="w-100 h-100 flex-wrap d-flex justify-content-center pt-3 px-1">
+  <mat-card *ngFor="let item of (amiibos$ | async)" class="w-25 fixed-size justify-content-between mx-1 flex-column">
+    <mat-card-header class="text-center d-flex justify-content-center">
       <mat-card-title class="d-flex justify-content-center align-items-center">
         <h1 class="text-center text-primary">Character: {{item.character}}</h1>
       </mat-card-title>
     </mat-card-header>
     <mat-card-content class="text-center d-flex flex-column justify-content-center align-items-center align-content-center">
-      <img src={{item.image}} class="fixed-img">
+      <img [src]="item.image" class="fixed-img">
       <h3 class="text-success">Amiibo Series: {{item.amiiboSeries}}</h3>
       <h3 class="text-danger">Character Game Series: {{item.gameSeries}}</h3>
       <p class="text-warning">Character Name: {{item.name}}</p>
