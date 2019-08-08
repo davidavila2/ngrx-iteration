@@ -14,13 +14,31 @@ export class MarvelService {
 
   constructor(private httpClient: HttpClient) { }
 
+
+
   all() {
     return this.httpClient.get(this.getUrl()).pipe(
       map((res: any) => res.data.results)
     )
   }
 
+  create(marvel) {
+    return this.httpClient.post(this.getUrl(), marvel)
+  }
+
+  update(marvel) {
+    return this.httpClient.patch(this.getUrlForId(marvel.id), marvel)
+  }
+
+  delete(marvelId) {
+  return this.httpClient.delete(this.getUrlForId(marvelId))
+}
+
   private getUrl() {
     return `${BASE_URL}`;
+  }
+
+  private getUrlForId(id) {
+    return `${this.getUrl}/${id}`
   }
 }

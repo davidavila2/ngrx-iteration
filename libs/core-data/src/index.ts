@@ -24,7 +24,7 @@ export { Amiibo, AmiiboResults, emptyAmiibo } from './lib/amiibo/amiibo';
 export { AmiiboService } from './lib/amiibo/amiibo.service';
 
 // Marvel 
-export { Marvel, Marvelresults, MarvelCharacters } from './lib/marvel/marvel';
+export { Marvel, Marvelresults, MarvelCharacters, emptyMarvel } from './lib/marvel/marvel';
 export { MarvelService } from './lib/marvel/marvel.service';
 
 //Something

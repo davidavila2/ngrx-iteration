@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 
 import { map, tap } from 'rxjs/operators';
 
-const BASE_URL = "https://material-icons-data.herokuapp.com/"
+// const BASE_URL = "https://material-icons-data.herokuapp.com/"
 
+const BASE_URL = "https://mat-icons-icon.herokuapp.com/"
 @Injectable({
   providedIn: 'root'
 })

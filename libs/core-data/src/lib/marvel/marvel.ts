@@ -12,3 +12,10 @@ export interface MarvelCharacters {
   description: string,
   thumbnail: string
 }
+
+export const emptyMarvel = {
+  id: 0,
+  name: '',
+  description: '',
+  thumbnail: '',
+}

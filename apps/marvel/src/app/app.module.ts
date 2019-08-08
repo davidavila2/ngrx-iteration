@@ -11,6 +11,7 @@ import { UiLoginModule } from '@workspace/ui-login';
 import { WildCardModule } from '@workspace/wild-card';
 import { MaterialModule } from '@workspace/material';
 import { HttpClientModule } from '@angular/common/http';
+import { CoreStateModule } from '@workspace/core-state';
 
 
 
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     UiLoginModule,
     UiToolbarModule,
     WildCardModule,
+    CoreStateModule,
     MaterialModule,
     HttpClientModule,
     RoutingModule

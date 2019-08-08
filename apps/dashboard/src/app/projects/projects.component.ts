@@ -9,25 +9,25 @@ import { Observable } from 'rxjs';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  // icons$: Observable<Icons[]> = this.iconsFacade.icons$;
+  icons$: Observable<Icons[]> = this.iconsFacade.icons$;
 
 
-  // constructor(private iconsFacade: IconsFacade) { }
+  constructor(private iconsFacade: IconsFacade) { }
 
+  ngOnInit() {
+    this.iconsFacade.loadIcons();
+  }
+
+  // icons$;
+
+  // constructor(private logoService: LogoService) { }
+  
   // ngOnInit() {
-  //   this.iconsFacade.loadIcons();
+  //   this.getLogos();
   // }
 
-  icons$;
-
-  constructor(private logoService: LogoService) { }
-  
-  ngOnInit() {
-    this.getLogos();
-  }
-
-  getLogos() {
-    this.icons$ = this.logoService.all();
-  }
+  // getLogos() {
+  //   this.icons$ = this.logoService.all();
+  // }
 
 }

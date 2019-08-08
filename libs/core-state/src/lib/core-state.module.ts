@@ -8,6 +8,7 @@ import { reducers } from '.';
 import { IconEffects } from './icons/icons.effects';
 import { PokemonEffects } from './pokemon-ngrx/pokemon.effects';
 import { AmiiboEffects } from './amiibo-ngrx/amiibo.effects';
+import { MarvelEffects } from './marvel-ngrx/marvel.effects';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AmiiboEffects } from './amiibo-ngrx/amiibo.effects';
     EffectsModule.forRoot([
       IconEffects,
       PokemonEffects,
-      AmiiboEffects
+      AmiiboEffects,
+      MarvelEffects
     ]),
   ]
 })
