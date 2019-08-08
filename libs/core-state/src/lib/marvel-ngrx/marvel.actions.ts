@@ -39,27 +39,27 @@ export class AddMarvel implements Action {
 }
 
 export class MarvelAdded implements Action {
-  readonly type: MarvelActionsTypes.MARVEL_ADDED;
+  readonly type = MarvelActionsTypes.MARVEL_ADDED;
   constructor(public payload: MarvelCharacters) {}
 }
 
 export class UpdateMarvel implements Action {
-  readonly type: MarvelActionsTypes.UPDATE_MARVEL;
+  readonly type = MarvelActionsTypes.UPDATE_MARVEL;
   constructor(public payload: MarvelCharacters) {}
 }
 
 export class MarvelUpdated implements Action {
-  readonly type: MarvelActionsTypes.MARVEL_UPDATED;
+  readonly type = MarvelActionsTypes.MARVEL_UPDATED;
   constructor(public payload: MarvelCharacters) {}
 }
 
 export class DeleteMarvel implements Action {
-  readonly type: MarvelActionsTypes.DELETE_MARVEL;
+  readonly type = MarvelActionsTypes.DELETE_MARVEL;
   constructor(public payload: MarvelCharacters) {}
 }
 
 export class MarvelDeleted implements Action {
-  readonly type: MarvelActionsTypes.MARVEL_DELETED;
+  readonly type = MarvelActionsTypes.MARVEL_DELETED;
   constructor(public payload: MarvelCharacters) {}
 }
 

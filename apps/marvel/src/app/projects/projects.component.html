@@ -1,4 +1,4 @@
-<workspace-heroes-list [marvelData]="marvel$ | async"></workspace-heroes-list>
+<workspace-heroes-list [marvelData]="marvel$ | async" (deleted)="deleteMarvel($event)"></workspace-heroes-list>
 <!-- <div class="d-flex flex-wrap">
   <mat-card class="w-50" *ngFor="let item of (marvel$ | async)">
     <mat-card-header class="justify-content-center">

@@ -1,8 +1,6 @@
-import { OnInit, AfterViewInit, Component, ViewChild, OnChanges, Input } from '@angular/core';
+import { OnInit, AfterViewInit, Component, ViewChild, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { HeroesListDataSource } from './heroes-list-datasource';
-import { MarvelService } from '@workspace/core-data';
-import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'workspace-heroes-list',
@@ -11,6 +9,7 @@ import { map, tap } from 'rxjs/operators';
 })
 export class HeroesListComponent implements OnInit, OnChanges {
   @Input() marvelData;
+  @Output() deleted = new EventEmitter();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource: HeroesListDataSource;
@@ -27,6 +26,13 @@ export class HeroesListComponent implements OnInit, OnChanges {
   ngOnChanges() {
     if (this.marvelData) {
       this.dataSource = new HeroesListDataSource(this.paginator, this.sort, this.marvelData);
+    }
+  }
+
+  alert(row) {
+    const confirmation = confirm(`Are you sure you want to delete ${row.name}`);
+    if (confirmation) {
+      this.deleted.emit(row);
     }
   }
 }

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, mergeMap } from 'rxjs/operators';
-import { Observable, forkJoin } from 'rxjs';
-import { Marvel, Marvelresults } from './marvel';
+import { map } from 'rxjs/operators';
 
 const offset = 900
 const BASE_URL = `https://gateway.marvel.com:443/v1/public/characters?limit=100&offset=${offset}&apikey=3f4536965516065023aa7f4f9e40ebb3`

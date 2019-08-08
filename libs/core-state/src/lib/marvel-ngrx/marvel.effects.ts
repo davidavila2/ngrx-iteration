@@ -5,6 +5,7 @@ import { Effect, Actions } from '@ngrx/effects';
 import { MarvelService, MarvelCharacters } from '@workspace/core-data';
 import { MarvelState } from './marvel.reducer';
 import { MarvelActionsTypes, LoadMarvel, MarvelLoaded, AddMarvel, MarvelAdded, UpdateMarvel, MarvelUpdated, DeleteMarvel, MarvelDeleted } from './marvel.actions';
+import { of } from 'rxjs';
 
 
 @Injectable()
@@ -42,7 +43,7 @@ export class MarvelEffects {
   @Effect() 
   deleteMarvel$ = this.dataPersistence.pessimisticUpdate(MarvelActionsTypes.DELETE_MARVEL, {
     run: (action: DeleteMarvel, state: MarvelState) => {
-      return this.marvelService.delete(action.payload.id).pipe(map((res: MarvelCharacters) => new MarvelDeleted(action.payload)))
+      return of(action.payload).pipe(map((res: MarvelCharacters) => new MarvelDeleted(action.payload)))
     },
     onError: (action: DeleteMarvel, error) => {
       console.error('Delete Marvel Effect', error)
