@@ -11,6 +11,7 @@ import { UiToolbarModule } from '@workspace/ui-toolbar';
 import { CoreDataModule } from '@workspace/core-data';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingModule } from './routing.module';
+import { CoreStateModule } from '@workspace/core-state';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { RoutingModule } from './routing.module';
     WildCardModule,
     UiToolbarModule,
     CoreDataModule,
+    CoreStateModule,
     HttpClientModule,
     RoutingModule
   ],

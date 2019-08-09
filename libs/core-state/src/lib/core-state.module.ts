@@ -9,6 +9,7 @@ import { IconEffects } from './icons/icons.effects';
 import { PokemonEffects } from './pokemon-ngrx/pokemon.effects';
 import { AmiiboEffects } from './amiibo-ngrx/amiibo.effects';
 import { MarvelEffects } from './marvel-ngrx/marvel.effects';
+import { StarwarsEffects } from './starwars-ngrx/starwars.effects';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MarvelEffects } from './marvel-ngrx/marvel.effects';
       IconEffects,
       PokemonEffects,
       AmiiboEffects,
-      MarvelEffects
+      MarvelEffects,
+      StarwarsEffects
     ]),
   ]
 })

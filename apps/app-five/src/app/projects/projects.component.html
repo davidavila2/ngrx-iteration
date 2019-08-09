@@ -1,8 +1,9 @@
-<div *ngFor="let it of (funny$ | async).results">
+<div *ngFor="let it of (starwars$ | async)">
   <mat-card class="bg-gradient-primary">
-    <mat-card-header>
-      <mat-card-title>
+    <mat-card-header class="w-100">
+      <mat-card-title class="w-100 d-flex justify-content-between">
           <h1>{{it.name}}</h1>
+          <!-- <button mat-button (click)="deleteStarwars()"><mat-icon>close</mat-icon></button> -->
       </mat-card-title>
       <mat-card-subtitle>
           <h3>{{it.gender}}</h3>

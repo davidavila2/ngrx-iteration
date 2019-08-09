@@ -15,5 +15,19 @@ export interface ShowSomething {
   created: string,
   edited: string,
   url: string
+}
 
+export const emptyStarwars = {
+  name: '',
+  height: '',
+  gender: '',
+  mass: '',
+  hair_color: '',
+  skin_color: '',
+  eye_color: '',
+  birth_year: '',
+  home_world: '',
+  created: '',
+  edited: '',
+  url: ''
 }

@@ -28,7 +28,7 @@ export { Marvel, Marvelresults, MarvelCharacters, emptyMarvel } from './lib/marv
 export { MarvelService } from './lib/marvel/marvel.service';
 
 //Something
-export { Something } from './lib/something/something';
+export { Something, ShowSomething, emptyStarwars } from './lib/something/something';
 export { SomethingService } from './lib/something/something.service';
 
 // Onepiece
