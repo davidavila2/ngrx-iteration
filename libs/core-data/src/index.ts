@@ -32,7 +32,7 @@ export { Something, ShowSomething, emptyStarwars } from './lib/something/somethi
 export { SomethingService } from './lib/something/something.service';
 
 // Onepiece
-export { Onepiece } from './lib/onepiece/onepiece';
+export { Onepiece, emptyOnepiece } from './lib/onepiece/onepiece';
 export { OnepieceService } from './lib/onepiece/onepiece.service';
 
 // Yugioh

@@ -4,7 +4,8 @@ import * as fromIcons from './icons/icons.reducer';
 import * as fromPokemon from './pokemon-ngrx/pokemon.reducer';
 import * as fromAmiibo from './amiibo-ngrx/amiibo.reducer';
 import * as fromMarvel from './marvel-ngrx/marvel.reducer';
-import * as fromStarwars from './starwars-ngrx/starwars.reducer'
+import * as fromStarwars from './starwars-ngrx/starwars.reducer';
+import * as fromOnepiece from './onepiece-ngrx/onepiece.reducer'
 
 export interface AppState {
   icons: fromIcons.IconsState;
@@ -12,6 +13,7 @@ export interface AppState {
   amiibo: fromAmiibo.AmiiboState;
   marvel: fromMarvel.MarvelState;
   starwars: fromStarwars.StarwarsState;
+  onepiece: fromOnepiece.OnepieceState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
@@ -19,5 +21,6 @@ export const reducers: ActionReducerMap<AppState> = {
   pokemon: fromPokemon.PokemonReducer,
   amiibo: fromAmiibo.AmiiboReducer,
   marvel: fromMarvel.MarvelReducer,
-  starwars: fromStarwars.StarwarsReducer
+  starwars: fromStarwars.StarwarsReducer,
+  onepiece: fromOnepiece.OnepieceReducer,
 }

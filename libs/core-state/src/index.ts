@@ -1,4 +1,5 @@
 export { CoreStateModule } from './lib/core-state.module';
+export { OnepieceFacade } from './lib/onepiece-ngrx/onepiece.facade';
 export { StarwarsFacade } from './lib/starwars-ngrx/starwars.facade';
 export { AmiiboFacade } from './lib/amiibo-ngrx/amiibo.facade';
 export { PokemonFacade } from './lib/pokemon-ngrx/pokemon.facade';

@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="currentOnepiece.id; else elseOnepiece">{{originalOnepiece}}</span>
+        <ng-template #elseOnepiece>Select Onepiece</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form (submit)="saved.emit(currentOnepiece)">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Chapter" [(ngModel)]="currentOnepiece.chapter" type="text" name="chapter">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">Save</button>
+      <button type="button" mat-button (click)="cancelled.emit(currentOnepiece)">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

@@ -1,5 +1,22 @@
-<div>
-  <mat-card *ngFor="let one of (onepiece$ | async).items">
+<div class="m-0 d-flex justify-content-center mt-3">
+  <div class="w-50 ml-3 mr-2">
+    <workspace-projects-list
+                            [onepiece]="onepiece$ | async"
+                            (selected)="selectOnepiece($event)"
+                            (deleted)="deleteOnepiece($event)"
+    ></workspace-projects-list>
+  </div>
+  <div class="w-50 mr-3 ml-2">
+    <workspace-projects-details
+                              [onepiece]="currentOnepiece$ | async"
+                              (saved)="saveOnepiece($event)"
+                              (cancelled)="cancel()"
+    ></workspace-projects-details>
+  </div>
+</div>
+
+<!-- <div>
+  <mat-card *ngFor="let one of onepiece$ | async">
     <mat-card-header class="justify-content-center">
       <mat-card-title>
         <p>{{one.chapter}}</p>
@@ -12,4 +29,4 @@
       <p>{{one.summary}}</p>
     </mat-card-content>
   </mat-card>
-</div>
+</div> -->

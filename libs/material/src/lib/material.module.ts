@@ -16,6 +16,7 @@ import  {
   MatSnackBarModule,
   MatTableModule,
   MatToolbarModule,
+  MatTooltipModule,
   MatButtonToggleModule,
   MatDialogModule,
   MatPaginatorModule, MatSortModule
@@ -35,6 +36,7 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     MatListModule,
     MatMenuModule,
     MatSelectModule,
+    MatTooltipModule,
     MatSidenavModule,
     MatSliderModule,
     MatSnackBarModule,
@@ -58,6 +60,7 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     MatMenuModule,
     MatSelectModule,
     MatSidenavModule,
+    MatTooltipModule,
     MatSliderModule,
     MatSnackBarModule,
     MatTableModule,
