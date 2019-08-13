@@ -10,7 +10,7 @@
         <h3 mat-line>
           {{one.chapter}}
         </h3>
-        <button mat-icon-button matTooltip="Click To Delete" (click)="deleted.emit(one.id);$event.stopImmediatePropagation()">
+        <button mat-icon-button matTooltip="Click To Delete" (click)="deleted.emit(one);$event.stopImmediatePropagation()">
           <mat-icon>close</mat-icon>
         </button>
         <button mat-icon-button matTooltip="Click For More Info" (click)="$event.stopImmediatePropagation()" [routerLink]="one.id">

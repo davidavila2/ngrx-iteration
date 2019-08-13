@@ -4,6 +4,7 @@ import * as fromOnepiece from './onepiece.reducer';
 import { emptyOnepiece } from '@workspace/core-data';
 
 export const selectOnepieceState = createFeatureSelector<fromOnepiece.OnepieceState>('onepiece')
+
 export const selectOnepieceId = createSelector(
   selectOnepieceState,
   fromOnepiece.selectOnepieceIds

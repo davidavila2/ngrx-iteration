@@ -5,6 +5,7 @@ import { Effect, Actions } from '@ngrx/effects';
 import { OnepieceState } from './onepiece.reducer';
 import { OnepieceService, Onepiece } from '@workspace/core-data';
 import { OnepieceActionTypes, LoadOnepiece, OnePieceLoaded, AddOnepiece, OnepieceAdded, UpdateOnepiece, OnepieceUpdated, DeleteOnepiece, OnepieceDeleted } from './onepiece.actions';
+import { of } from 'rxjs';
 
 @Injectable() 
 export class OnepieceEffects {
@@ -41,7 +42,7 @@ export class OnepieceEffects {
   @Effect()
   deleteOnepiece$ = this.dataPersistence.pessimisticUpdate(OnepieceActionTypes.DELETE_ONEPIECE, {
     run: (action: DeleteOnepiece, state: OnepieceState) => {
-      return this.onepieceService.delete(action.payload.id).pipe(map((res: Onepiece) => new OnepieceDeleted(action.payload)))
+      return of(action.payload).pipe(map((res: Onepiece) => new OnepieceDeleted(action.payload)))
     },
     onError: (action: DeleteOnepiece, error) => {
       console.error('Delete Onepiece Effect', error)
