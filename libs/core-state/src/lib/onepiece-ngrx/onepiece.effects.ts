@@ -22,7 +22,7 @@ export class OnepieceEffects {
   @Effect()
   addOnepiece$ = this.dataPersistence.pessimisticUpdate(OnepieceActionTypes.ADD_ONEPIECE, {
     run: (action: AddOnepiece, state: OnepieceState) => {
-      return this.onepieceService.create(action.payload).pipe(map((res: Onepiece) => new OnepieceAdded(res)))
+      return of(action.payload).pipe(map((res: Onepiece) => new OnepieceAdded(res)))
     },
     onError: (action: AddOnepiece, error) => {
       console.error('Add Onepiece Effect', error)
@@ -32,7 +32,7 @@ export class OnepieceEffects {
   @Effect()
   updateOnepiece = this.dataPersistence.pessimisticUpdate(OnepieceActionTypes.UPDATE_ONEPIECE, {
     run: (action: UpdateOnepiece, state: OnepieceState) => {
-      return this.onepieceService.update(action.payload).pipe(map((res: Onepiece) => new OnepieceUpdated(res)))
+      return of(action.payload).pipe(map((res: Onepiece) => new OnepieceUpdated(res)))
     },
     onError: (action: UpdateOnepiece, error) => {
       console.error('Delete Onepiece Effect', error)

@@ -14,10 +14,11 @@ import { CoreStateModule } from '@workspace/core-state';
 import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
 import { ProjectsDetailsComponent } from './projects/projects-details/projects-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProjectsItemComponent } from './projects/projects-item/projects-item.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ProjectsComponent, ProjectsListComponent, ProjectsDetailsComponent],
+  declarations: [AppComponent, ProjectsComponent, ProjectsListComponent, ProjectsDetailsComponent, ProjectsItemComponent],
   imports: [
     BrowserModule,
     MaterialModule,

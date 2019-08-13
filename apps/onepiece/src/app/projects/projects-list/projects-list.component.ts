@@ -9,6 +9,7 @@ import { Onepiece } from '@workspace/core-data';
 export class ProjectsListComponent {
   @Input() onepiece: Onepiece[];
   @Input() readonly = false;
+  @Input() loading: boolean;
   @Output() selected = new EventEmitter();
   @Output() deleted = new EventEmitter();
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, timeout, delay } from 'rxjs/operators';
 
 const BASE_URL = 'https://onepiecenocors.herokuapp.com/';
 
@@ -33,6 +33,7 @@ export class OnepieceService {
 
   all() {
     return this.httpClient.get(this.getUrl()).pipe(
+      delay(1000),
       map((res: any) => res.items)
     )
   }

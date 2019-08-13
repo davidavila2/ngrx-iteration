@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OnepieceService, Onepiece } from '@workspace/core-data';
+import { OnepieceFacade } from '@workspace/core-state';
 
 @Component({
   selector: 'workspace-projects-item',
@@ -8,26 +9,26 @@ import { OnepieceService, Onepiece } from '@workspace/core-data';
   styleUrls: ['./projects-item.component.scss']
 })
 export class ProjectsItemComponent implements OnInit {
-  @Input() onepiece: Onepiece[];
   private _onepieceItem$;
-  public get onepieceItem$() {
+  get onepieceItem$() {
     return this._onepieceItem$
   }
-  public set onepieceItem$(value) {
+  set onepieceItem$(value) {
     this._onepieceItem$ = value;
   }
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private onepieceService: OnepieceService
+    private onepieceFacade: OnepieceFacade
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe(param => {
       const id = param['id'];
-      this.onepieceItem$ = this.onepieceService.findOne(id);
-    })
+      this.onepieceFacade.selectOnepiece(id);
+    });
+    this._onepieceItem$ = this.onepieceFacade.currentOnepiece$;
   }
 
 }

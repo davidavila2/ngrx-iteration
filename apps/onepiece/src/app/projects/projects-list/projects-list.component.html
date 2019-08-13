@@ -4,7 +4,8 @@
       <h1>Onepiece</h1>
     </mat-card-title>
   </mat-card-header>
-  <mat-card-content>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  <mat-card-content *ngIf="!loading">
     <mat-list>
       <mat-list-item *ngFor="let one of onepiece" (click)="selected.emit(one.id);$event.stopImmediatePropagation()">
         <h3 mat-line>

@@ -19,7 +19,9 @@ import  {
   MatTooltipModule,
   MatButtonToggleModule,
   MatDialogModule,
-  MatPaginatorModule, MatSortModule
+  MatPaginatorModule,
+  MatSortModule,
+  MatProgressBarModule
 }  from  '@angular/material';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
 
@@ -45,7 +47,8 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     MatButtonToggleModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressBarModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -68,7 +71,8 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     MatButtonToggleModule,
     MatPaginatorModule,
     HeroesListComponent,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressBarModule
   ],
   declarations: [HeroesListComponent]
 })
