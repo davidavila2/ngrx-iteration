@@ -1,0 +1,16 @@
+<div *ngIf="onepieceItem$ | async as onepieceItem"
+  class="d-flex justify-content-center align-self-center m-auto vh-100">
+  <mat-card class="d-flex justify-content-center flex-column align-self-center h-25">
+    <mat-card-header>
+      <mat-card-title>
+        <p class="text-center">{{onepieceItem.chapter}}</p>
+        <p>{{onepieceItem.character}}</p>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <img src={{onepieceItem.cover_images}}>
+        <p>{{onepieceItem.theories}}</p>
+        <p>{{onepieceItem.summary}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

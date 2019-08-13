@@ -3,7 +3,7 @@
     <workspace-projects-list
                             [onepiece]="onepiece$ | async"
                             (selected)="selectOnepiece($event)"
-                            (deleted)="deleteOnepiece($event)"
+                            (deleted)="alert($event)"
     ></workspace-projects-list>
   </div>
   <div class="w-50 mr-3 ml-2">
