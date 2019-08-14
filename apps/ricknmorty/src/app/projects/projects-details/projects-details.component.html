@@ -9,8 +9,9 @@
   </mat-card-header>
   <form (submit)="saved.emit(currentRick)">
     <mat-card-content>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Character" type="text" name="name" [(ngModel)]="currentRick.name">
+      <mat-form-field appearance="outline">
+        <mat-label>{{currentRick.name}}</mat-label>
+        <input matInput placeholder="Character" type="text" name="name">
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>

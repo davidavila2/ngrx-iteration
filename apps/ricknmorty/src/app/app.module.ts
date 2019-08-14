@@ -25,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UiLoginModule,
     CoreStateModule,
     FormsModule,
+    WildCardModule,
     ReactiveFormsModule,
     UiToolbarModule,
     CoreDataModule,
