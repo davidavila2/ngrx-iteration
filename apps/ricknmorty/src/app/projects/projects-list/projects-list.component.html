@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>RicknMorty Characters</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  <mat-card-content *ngIf="!loading">
+    <mat-list> 
+      <mat-list-item *ngFor="let one of rick" (click)="selected.emit(one.id)">
+        <h3 mat-line>
+          {{one.name}}
+        </h3>
+        <button mat-icon-button matTooltip="Click To Delete" (click)="deleted.emit(one);$event.stopImmediatePropagation()">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Click For More Details" (click)="$event.stopImmediatePropagation()" [routerLink]="one.id">
+          <mat-icon>info</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<!-- <div class="d-flex flex-wrap">
+  <mat-card *ngFor="let it of rick$ | async" class="w-25">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>{{it.name}}</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img src={{it.image}} class="fixed-image">
+      <h3>{{it.status}}</h3>
+      <h3>{{it.gender}}</h3>
+      <h3>{{it.origin.name}}</h3>
+    </mat-card-content>
+  </mat-card>
+</div> -->

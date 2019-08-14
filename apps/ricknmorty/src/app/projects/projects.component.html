@@ -1,0 +1,33 @@
+<!-- <div class="d-flex flex-wrap">
+  <mat-card *ngFor="let it of rick$ | async" class="w-25">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>{{it.name}}</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img src={{it.image}} class="fixed-image">
+      <h3>{{it.status}}</h3>
+      <h3>{{it.gender}}</h3>
+      <h3>{{it.origin.name}}</h3>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+<div class="d-flex justify-content-center mt-3">
+  <div class="w-50 mx-3">
+    <app-projects-list
+    [rick]="rick$ | async"
+    [loading]="isLoading$ | async"
+    (selected)="selectRick($event)"
+    (deleted)="alert($event)"
+    ></app-projects-list>
+  </div>
+  <div class="w-50 mx-3">
+    <app-projects-details
+    [rick]="currentRick$ | async"
+    (saved)="saveRick($event)"
+    (cancelled)="cancel()"
+    ></app-projects-details>
+  </div>
+</div>
