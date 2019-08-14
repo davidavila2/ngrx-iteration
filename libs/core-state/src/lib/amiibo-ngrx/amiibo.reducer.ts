@@ -1,7 +1,6 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Amiibo } from '@workspace/core-data';
 import { AmiiboActionTypes, AmiiboActions } from './amiibo.actions';
-import { select } from '@ngrx/store';
 
 
 export interface AmiiboState extends EntityState<Amiibo> {
@@ -9,7 +8,7 @@ export interface AmiiboState extends EntityState<Amiibo> {
   isLoading: boolean
 }
 
-export const adapter: EntityAdapter<Amiibo> = createEntityAdapter<Amiibo>({selectId: amiibo => amiibo.image});
+export const adapter: EntityAdapter<Amiibo> = createEntityAdapter<Amiibo>({selectId: amiibo => amiibo.name});
 export const initialState: AmiiboState = adapter.getInitialState({
   selectedAmiiboId: null,
   isLoading: false

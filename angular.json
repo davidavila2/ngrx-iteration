@@ -1245,9 +1245,9 @@
         }
       }
     },
-    "yugioh": {
-      "root": "apps/yugioh/",
-      "sourceRoot": "apps/yugioh/src",
+    "ricknmorty": {
+      "root": "apps/ricknmorty/",
+      "sourceRoot": "apps/ricknmorty/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -1259,13 +1259,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/yugioh",
-            "index": "apps/yugioh/src/index.html",
-            "main": "apps/yugioh/src/main.ts",
-            "polyfills": "apps/yugioh/src/polyfills.ts",
-            "tsConfig": "apps/yugioh/tsconfig.app.json",
-            "assets": ["apps/yugioh/src/favicon.ico", "apps/yugioh/src/assets"],
-            "styles": ["apps/yugioh/src/styles.scss"],
+            "outputPath": "dist/apps/ricknmorty",
+            "index": "apps/ricknmorty/src/index.html",
+            "main": "apps/ricknmorty/src/main.ts",
+            "polyfills": "apps/ricknmorty/src/polyfills.ts",
+            "tsConfig": "apps/ricknmorty/tsconfig.app.json",
+            "assets": ["apps/ricknmorty/src/favicon.ico", "apps/ricknmorty/src/assets"],
+            "styles": ["apps/ricknmorty/src/styles.scss"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -1273,8 +1273,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/yugioh/src/environments/environment.ts",
-                  "with": "apps/yugioh/src/environments/environment.prod.ts"
+                  "replace": "apps/ricknmorty/src/environments/environment.ts",
+                  "with": "apps/ricknmorty/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -1299,26 +1299,26 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "yugioh:build"
+            "browserTarget": "ricknmorty:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "yugioh:build:production"
+              "browserTarget": "ricknmorty:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "yugioh:build"
+            "browserTarget": "ricknmorty:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/yugioh/tsconfig.app.json",
-              "apps/yugioh/tsconfig.spec.json"
+              "apps/ricknmorty/tsconfig.app.json",
+              "apps/ricknmorty/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -1326,35 +1326,35 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "apps/yugioh/jest.config.js",
-            "tsConfig": "apps/yugioh/tsconfig.spec.json",
-            "setupFile": "apps/yugioh/src/test-setup.ts"
+            "jestConfig": "apps/ricknmorty/jest.config.js",
+            "tsConfig": "apps/ricknmorty/tsconfig.spec.json",
+            "setupFile": "apps/ricknmorty/src/test-setup.ts"
           }
         }
       }
     },
-    "yugioh-e2e": {
-      "root": "apps/yugioh-e2e",
+    "ricknmorty-e2e": {
+      "root": "apps/ricknmorty-e2e",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@nrwl/builders:cypress",
           "options": {
-            "cypressConfig": "apps/yugioh-e2e/cypress.json",
-            "tsConfig": "apps/yugioh-e2e/tsconfig.e2e.json",
-            "devServerTarget": "yugioh:serve"
+            "cypressConfig": "apps/ricknmorty-e2e/cypress.json",
+            "tsConfig": "apps/ricknmorty-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ricknmorty:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "yugioh:serve:production"
+              "devServerTarget": "ricknmorty:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/yugioh-e2e/tsconfig.e2e.json",
+            "tsConfig": "apps/ricknmorty-e2e/tsconfig.e2e.json",
             "exclude": ["**/node_modules/**"]
           }
         }

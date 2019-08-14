@@ -35,9 +35,9 @@ export { SomethingService } from './lib/something/something.service';
 export { Onepiece, emptyOnepiece } from './lib/onepiece/onepiece';
 export { OnepieceService } from './lib/onepiece/onepiece.service';
 
-// Yugioh
-export { CardDetails, Yugioh } from './lib/yugioh/yugioh';
-export { YugiohService } from './lib/yugioh/yugioh.service';
+// Ricknmorty
+export { RicknmortyDetails, Ricknmorty, emptyRicknmortyDetails} from './lib/ricknmorty/ricknmorty';
+export { RicknmortyService } from './lib/ricknmorty/ricknmorty.service';
 
 //Eight 
 export { EightService } from './lib/eight/eight.service';

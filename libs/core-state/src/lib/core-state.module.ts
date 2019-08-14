@@ -11,6 +11,7 @@ import { AmiiboEffects } from './amiibo-ngrx/amiibo.effects';
 import { MarvelEffects } from './marvel-ngrx/marvel.effects';
 import { StarwarsEffects } from './starwars-ngrx/starwars.effects';
 import { OnepieceEffects } from './onepiece-ngrx/onepiece.effects';
+import { RickEffects } from './ngrx-ricknmorty/ricknmorty.effects';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { OnepieceEffects } from './onepiece-ngrx/onepiece.effects';
       MarvelEffects,
       StarwarsEffects,
       OnepieceEffects,
+      RickEffects,
     ]),
   ]
 })

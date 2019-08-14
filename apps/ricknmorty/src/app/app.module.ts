@@ -9,15 +9,23 @@ import { UiLoginModule } from '@workspace/ui-login';
 import { UiToolbarModule } from '@workspace/ui-toolbar';
 import { CoreDataModule } from '@workspace/core-data';
 import { WildCardModule } from '@workspace/wild-card';
+import { CoreStateModule } from '@workspace/core-state';
 import { RoutingModule } from './routing.module';
+import { ProjectsDetailsComponent } from './projects/projects-details/projects-details.component';
+import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
+import { ProjectsItemComponent } from './projects/projects-item/projects-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AppComponent, ProjectsComponent],
+  declarations: [AppComponent, ProjectsComponent, ProjectsDetailsComponent, ProjectsListComponent, ProjectsItemComponent],
   imports: [
-BrowserModule,
+    BrowserModule,
     MaterialModule,
     UiLoginModule,
+    CoreStateModule,
+    FormsModule,
+    ReactiveFormsModule,
     UiToolbarModule,
     CoreDataModule,
     WildCardModule,
@@ -26,4 +34,4 @@ BrowserModule,
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

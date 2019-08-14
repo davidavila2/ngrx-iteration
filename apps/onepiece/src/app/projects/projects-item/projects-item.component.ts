@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OnepieceService, Onepiece } from '@workspace/core-data';
 import { OnepieceFacade } from '@workspace/core-state';
 
 @Component({
