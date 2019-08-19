@@ -36,7 +36,7 @@ export class AuthService {
 
     return this.httpClient.post(url, loginCredentials).pipe(
       tap((res: { access_token: string }) => this.setToken(res.access_token)),
-      tap(_ => this.router.navigate(['']))
+      tap(_ => this.router.navigate(['/projects']))
     ).subscribe();
   }
 }

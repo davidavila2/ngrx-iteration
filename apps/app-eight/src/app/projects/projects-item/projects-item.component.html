@@ -1,0 +1,18 @@
+<div *ngIf="smashbro$ | async as super" class="d-flex justify-content-center align-self-center m-auto mt-5 vh-100 overflow-fixed" [style.background-color]="super.ColorTheme">
+  <mat-card class="d-flex justify-content-center flex-column align-self-center m-3">
+    <mat-card-header class="text-center d-flex justify-content-center align-items-center align-self-center">
+      <mat-card-title>
+        <h1 [style.color]="super.ColorTheme">{{super.Name}}</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="m-auto d-flex justify-content-center align-items-center flex-column">
+      <img [src]="super.MainImageUrl ? super.MainImageUrl : 'https://picsum.photos/200/300' " class="fixed-image">
+      <div>
+        <span>
+            <a href="{{super.FullUrl}}">{{super.FullUrl}}</a>
+        </span>
+        <h3 [style.color]="super.ColorTheme">Display Name: {{super.DisplayName}}</h3>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

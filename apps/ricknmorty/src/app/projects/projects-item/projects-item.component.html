@@ -1,15 +1,14 @@
 <div *ngIf="rickItem$ | async as rick" class="d-flex justify-content-center align-self-center m-auto mt-5">
   <mat-card class="d-flex justify-content-center flex-column align-self-center m-3">
-    <mat-card-header>
-      <mat-card-title class="text-center d-flex justify-content-center align-items-center align-self-center">
-        <h1 class="text-center text-primary">{{rick.name}}</h1>
+    <mat-card-header class="text-center d-flex justify-content-center align-items-center align-self-center">
+      <mat-card-title>
+        <h1 class="text-primary">{{rick.name}}</h1>
       </mat-card-title>
     </mat-card-header>
     <mat-card-content class="m-auto d-flex justify-content-center align-items-center flex-column">
         <img src={{rick.image}} class="fixed-image">
         <h3>{{rick.status}}</h3>
         <h3>{{rick.gender}}</h3>
-        <h3>{{rick.origin.name}}</h3>
       </mat-card-content>
   </mat-card>
 </div>

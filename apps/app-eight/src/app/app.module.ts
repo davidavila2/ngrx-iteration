@@ -11,16 +11,24 @@ import { WildCardModule } from '@workspace/wild-card';
 import { CoreDataModule } from '@workspace/core-data';
 import { RoutingModule } from './routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CoreStateModule } from '@workspace/core-state';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
+import { ProjectsDetailsComponent } from './projects/projects-details/projects-details.component';
+import { ProjectsItemComponent } from './projects/projects-item/projects-item.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ProjectsComponent],
+  declarations: [AppComponent, ProjectsComponent, ProjectsListComponent, ProjectsDetailsComponent, ProjectsItemComponent],
   imports: [
     BrowserModule,
     MaterialModule,
     UiToolbarModule,
     UiLoginModule,
     WildCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CoreStateModule,
     CoreDataModule,
     HttpClientModule,
     RoutingModule

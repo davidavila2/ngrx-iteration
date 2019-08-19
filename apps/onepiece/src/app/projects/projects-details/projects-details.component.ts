@@ -19,5 +19,8 @@ export class ProjectsDetailsComponent {
   @Input() set onepiece(value) {
     if (value) this.originalOnepiece = value.title;
     this.currentOnepiece = Object.assign({}, value)
+    console.log('value of V', value)
+    console.log('originialT', this.originalOnepiece)
+    console.log('currentT', this.currentOnepiece)
   }
 }

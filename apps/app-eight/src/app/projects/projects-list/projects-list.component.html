@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Super Smash Bro Characters</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  <mat-card-content *ngIf="!loading">
+    <mat-list>
+      <mat-list-item *ngFor="let character of supersmashbros" (click)="selected.emit(character)"
+        [style.background-color]="character.ColorTheme">
+        <img mat-list-icon [src]="character.ThumbnailUrl ? character.ThumbnailUrl : 'https://picsum.photos/200/300'" class="mat-elevation-z8 rounded-circle border-img">
+        <h3 mat-line>{{character.Name}}</h3>
+        <h3 mat-line>{{character.Game}}</h3>
+        <button mat-icon-button (click)="$event.stopImmediatePropagation()" [routerLink]="character.OwnerId" matTooltip="Click for a more detailed view">
+          <mat-icon class="material-icons-outlined">info</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleted.emit(character);$event.stopImmediatePropagation()" matTooltip="Click to Delete">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

@@ -44,14 +44,13 @@ export class ProjectsComponent implements OnInit {
     this.onepieceFacade.createOnepiece(onepiece)
   }
 
-  // deleteOnepiece(onepiece) {
     alert(onepiece) {
       const confirmation = confirm(`Are you sure you want to delete ${onepiece.chapter}`)
       if (confirmation) {
         this.onepieceFacade.deleteOnepiece(onepiece);
       }
     }
-  // }
+
 
   cancel() {
     this.resetOnepiece();

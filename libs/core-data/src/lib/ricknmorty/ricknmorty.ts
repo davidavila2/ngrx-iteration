@@ -8,11 +8,6 @@ export interface RicknmortyDetails {
   image: string,
   status: string,
   gender: string,
-  // origin: OriginName[];
-}
-
-export interface OriginName {
-  name: string
 }
 
 export const emptyRicknmortyDetails = {

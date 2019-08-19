@@ -11,6 +11,18 @@
         <h3 mat-line>
           {{one.name}}
         </h3>
+
+        <h3 mat-line>
+            {{one.status}}
+          </h3>
+
+          <h3 mat-line>
+              {{one.gender}}
+            </h3>
+
+            <h3 mat-line>
+                {{one.origin.name}}
+              </h3>
         <button mat-icon-button matTooltip="Click To Delete" (click)="deleted.emit(one);$event.stopImmediatePropagation()">
           <mat-icon>close</mat-icon>
         </button>

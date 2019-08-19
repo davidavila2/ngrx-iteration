@@ -41,7 +41,7 @@ export { RicknmortyService } from './lib/ricknmorty/ricknmorty.service';
 
 //Eight 
 export { EightService } from './lib/eight/eight.service';
-export { Eight } from './lib/eight/eight';
+export { Supersmashbros, emptySupersmashbro } from './lib/eight/eight';
 
 //nine
 export { Nine } from './lib/nine/nine';

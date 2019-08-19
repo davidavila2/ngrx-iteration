@@ -12,11 +12,12 @@ import { MarvelEffects } from './marvel-ngrx/marvel.effects';
 import { StarwarsEffects } from './starwars-ngrx/starwars.effects';
 import { OnepieceEffects } from './onepiece-ngrx/onepiece.effects';
 import { RickEffects } from './ngrx-ricknmorty/ricknmorty.effects';
+import { SupersmashbrosEffects } from './superSmashBros-ngrx/ssb.effects';
 
 
 @NgModule({
   imports: [
-  CommonModule,
+    CommonModule,
     NxModule.forRoot(),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
@@ -30,7 +31,8 @@ import { RickEffects } from './ngrx-ricknmorty/ricknmorty.effects';
       StarwarsEffects,
       OnepieceEffects,
       RickEffects,
+      SupersmashbrosEffects,
     ]),
   ]
 })
-export class CoreStateModule {}
+export class CoreStateModule { }

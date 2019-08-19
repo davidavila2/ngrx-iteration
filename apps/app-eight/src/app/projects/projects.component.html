@@ -1,12 +1,18 @@
-<div class="d-flex flex-wrap">
-  <mat-card *ngFor="let it of (eight$ | async)" class="w-45 mx-auto border-box mt-2" [style.background-color]="it.ColorTheme">
-    <mat-card-header>
-      <mat-card-title>
-        <h1 class="title">{{it.Name}}</h1>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <img src={{it.MainImageUrl}} class="fixed-image">
-    </mat-card-content>
-  </mat-card>
+<div class="m-0 d-flex justify-content-center mt-3">
+  <div class="w-50 ml-3 mr-2">
+    <workspace-projects-list 
+    [supersmashbros]="supersmashbro$ | async"
+    [loading]="isLoading$ | async"
+    (selected)="selectSupersmashbro($event)"
+    (deleted)="alert($event)"
+    ></workspace-projects-list>
+  </div>
+
+  <div class="w-50 mr-3 ml-2">
+    <workspace-projects-details
+    [supersmashbros]="currentSupersmashbro$ | async"
+    (saved)="saveSupersmashbro($event)"
+    (cancelled)="cancel()"
+    ></workspace-projects-details>
+  </div>
 </div>

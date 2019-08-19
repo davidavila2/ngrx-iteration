@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EightService } from '@workspace/core-data';
+import { Supersmashbros, emptySupersmashbro } from '@workspace/core-data';
+import { Observable } from 'rxjs';
+import { SupersmashbroFacade } from '@workspace/core-state';
 
 @Component({
   selector: 'workspace-projects',
@@ -7,15 +9,49 @@ import { EightService } from '@workspace/core-data';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  eight$
-  constructor(private eightService: EightService) { }
+  supersmashbro$: Observable<Supersmashbros[]> = this.supersmashbroFacade.supersmashbro$
+  currentSupersmashbro$: Observable<Supersmashbros> = this.supersmashbroFacade.currentSupersmashbro$;
+  isLoading$: Observable<boolean> = this.supersmashbroFacade.isSupersmashbrosLoading$;
+
+  constructor(private supersmashbroFacade: SupersmashbroFacade) { }
+
+  resetSupersmashbro() {
+    this.selectSupersmashbro(emptySupersmashbro.OwnerId)
+  }
 
   ngOnInit() {
-    this.getProjects();
+    this.resetSupersmashbro();
+    this.supersmashbroFacade.loadSupersmashbros();
+    this.supersmashbroFacade.mutations$.subscribe(_ => this.resetSupersmashbro())
   }
 
-  getProjects() {
-    this.eight$ = this.eightService.all()
+  selectSupersmashbro(supersmashbro) {
+    this.supersmashbroFacade.selectSupersmashbro(supersmashbro.OwnerId);
   }
 
+  saveSupersmashbro(supersmashbro) {
+    supersmashbro.OwnerId ?
+      this.supersmashbroFacade.updateSupersmashbro(supersmashbro) :
+      this.supersmashbroFacade.createSupersmashbro(supersmashbro)
+      
+  }
+
+  updateSupersmashbro(supersmashbro) {
+    this.supersmashbroFacade.updateSupersmashbro(supersmashbro)
+  }
+
+  createSupersmashbro(supersmashbro) {
+    this.supersmashbroFacade.createSupersmashbro(supersmashbro);
+  }
+
+  alert(supersmashbro) {
+    const confirmation = confirm(`Are you sure you want to delete ${supersmashbro.name} ?`)
+    if (confirmation) {
+      this.supersmashbroFacade.deleteSupersmashbro(supersmashbro)
+    }
+  }
+
+  cancel() {
+    this.resetSupersmashbro()
+  }
 }

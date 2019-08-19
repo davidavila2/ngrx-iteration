@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '@workspace/core-data';
@@ -9,6 +9,7 @@ import { AuthService } from '@workspace/core-data';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @Input() isAuthenticated: boolean
   form: FormGroup;
 
   constructor(
@@ -25,6 +26,10 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       this.authService.login(this.form.value);
     }
+  }
+
+  goProjects() {
+      this.router.navigate(['/projects'])
   }
 
   private initForm() {
