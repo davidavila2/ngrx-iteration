@@ -2,12 +2,21 @@ import { ProjectsComponent } from './projects/projects.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from '@workspace/ui-login';
 import { NgModule } from '@angular/core';
+import { ProjectsItemsComponent } from './projects/projects-items/projects-items.component';
+import { WildComponent } from '@workspace/wild-card';
 
 
 const routes: Routes = [
-  { path: 'projects', component: ProjectsComponent },
+  { path: '', component: LoginComponent },
+  {
+    path: '', children: [
+      { path: '', redirectTo: 'projects', pathMatch: 'full' },
+      { path: 'projects', component: ProjectsComponent },
+      { path: 'projects/:id', component: ProjectsItemsComponent },
+  ] },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: 'projects', pathMatch: 'full'}
+  { path: 'wild', component: WildComponent },
+  { path: '**', redirectTo: 'wild', pathMatch: 'full' }
 ]
 
 @NgModule({

@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Harry Potter Characters</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  <mat-card-content *ngIf="!loading">
+    <mat-list>
+      <mat-list-item *ngFor="let characters of nine" (click)="selected.emit(characters)">
+          <img mat-list-icon [src]="characters.image ? characters.image : 'https://picsum.photos/200/300'" class="mat-elevation-z8 rounded-circle border-img">
+        <h2 mat-line class="fixed-font">
+          {{characters.name}}
+        </h2>
+        <button mat-icon-button (click)="$event.stopImmediatePropagation()" [routerLink]="characters.id"
+          matTooltip="Click for a more detailed view">
+          <mat-icon class="material-icons-outlined">info</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleted.emit(characters);$event.stopImmediatePropagation()"
+          matTooltip="Click to Delete">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

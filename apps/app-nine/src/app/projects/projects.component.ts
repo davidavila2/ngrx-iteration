@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NineService } from '@workspace/core-data';
+import { NineService, Nine, emptyHarrypotter } from '@workspace/core-data';
 import { MatDialog } from '@angular/material';
 import { NineDialogComponent } from '../nine-dialog/nine-dialog.component';
+import { Observable } from 'rxjs';
+import { HarrypotterFacade } from '@workspace/core-state';
 
 @Component({
   selector: 'workspace-projects',
@@ -9,28 +11,57 @@ import { NineDialogComponent } from '../nine-dialog/nine-dialog.component';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  nine$;
+  harrypotter$: Observable<Nine[]> = this.harrypotterFacade.harrypotter$
+  currentHarrypotter$: Observable<any> = this.harrypotterFacade.currentHarrypotter$
+  isLoading$: Observable<boolean> = this.harrypotterFacade.isHarrypotterLoading$;
 
-  constructor(private nineService: NineService, public dialog: MatDialog) { }
+  constructor(
+    private harrypotterFacade: HarrypotterFacade,
+    public dialog: MatDialog
+  ) { }
+
+  resetHarrypotter() {
+    this.selectHarrypotter(emptyHarrypotter.name);
+  }
 
   ngOnInit() {
-    this.getProjects();
+    this.resetHarrypotter();
+    this.harrypotterFacade.loadHarrypotter();
+    this.harrypotterFacade.mutations$.subscribe(_ => this.resetHarrypotter())
   }
 
-  getProjects() {
-    this.nine$ = this.nineService.all();
+  selectHarrypotter(harrypotter) {
+    this.harrypotterFacade.selectHarrypotter(harrypotter.id)
   }
 
-  openDialog(): void {
-  const dialogRef = this.dialog.open(NineDialogComponent, {
-    width: '100%'
-  });
+  saveHarrypotter(harrypotter) {
+    harrypotter.id ? 
+      this.harrypotterFacade.updateHarrypotter(harrypotter) :
+      this.harrypotterFacade.createHarrypotter(harrypotter)
+  }
 
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('Dialog Closed');
+  updateHarrypotter(harrypotter) {
+    this.harrypotterFacade.updateHarrypotter(harrypotter);
+  }
 
-  })
-};
+  alert(harrypotter) {
+    const confirmation = confirm(`Are you sure you want to delete ${harrypotter.id} ?`)
+    if (confirmation) {
+      this.harrypotterFacade.deleteHarrypotter(harrypotter)
+    }
+  }
+  
+  cancel() {
+    this.resetHarrypotter()
+  }
 
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(NineDialogComponent, {
+  //     width: '100%'
+  //   });
 
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('Dialog Closed');
+  //   })
+  // };
 }

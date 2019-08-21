@@ -30,7 +30,7 @@ export class SupersmashbrosEffects {
       console.error('Add Supersmashbros Effect', error)
     }
     })
-    
+
   @Effect()
   updateSupersmashbros$ = this.dataPersistence.pessimisticUpdate(SupersmashbrosActionTypes.UPDATE_SUPERSMASHBROS, {
     run: (action: UpdateSupersmashbros, state: SupersmashbrosState) => {

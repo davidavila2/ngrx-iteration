@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center align-self-center m-auto vh-100">
+  <mat-card class="d-flex justify-content-center flex-column align-self-center w-25"
+    *ngIf="hpItem$ | async as hpSelected">
+    <mat-card-header class="align-self-center">
+      <mat-card-title>
+        <h1>{{hpSelected.name}}</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="align-self-center d-flex flex-column">
+      <div class="d-flex justify-content-between">
+        <p>Species: {{hpSelected.species ? hpSelected.species : 'Unknown'}}</p>
+        <p>Gender: {{hpSelected.gender}}</p>
+      </div>
+      <p>House: {{hpSelected.house ? hpSelected.house : 'Unknown'}}</p>
+      <img [src]="hpSelected.image ? hpSelected.image : 'https://picsum.photos/200/300'" class="fixed-image d-flex align-self-center">
+      <div class="d-flex justify-content-between">
+        <p>Status: {{hpSelected.alive}}</p>
+        <p>Ancestry: {{hpSelected.ancestry ? hpSelected.ancestry : 'Unknown'}}</p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <p>DOB: {{hpSelected.dateOfBirth ? hpSelected.dateOfBirth : 'Unknown'}}</p>
+        <p>Actor: {{hpSelected.actor}}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

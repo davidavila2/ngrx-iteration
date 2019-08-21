@@ -1,4 +1,5 @@
 export { CoreStateModule } from './lib/core-state.module';
+export  { HarrypotterFacade } from './lib/harrypotter-ngrx/harrypotter.facade';
 export { SupersmashbroFacade } from './lib/superSmashBros-ngrx/ssb.facade';
 export { RickFacade } from './lib/ngrx-ricknmorty/ricknmorty.facade';
 export { OnepieceFacade } from './lib/onepiece-ngrx/onepiece.facade';

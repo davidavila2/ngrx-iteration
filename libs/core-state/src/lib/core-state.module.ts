@@ -13,6 +13,7 @@ import { StarwarsEffects } from './starwars-ngrx/starwars.effects';
 import { OnepieceEffects } from './onepiece-ngrx/onepiece.effects';
 import { RickEffects } from './ngrx-ricknmorty/ricknmorty.effects';
 import { SupersmashbrosEffects } from './superSmashBros-ngrx/ssb.effects';
+import { HarrypotterEffects } from './harrypotter-ngrx/harrypotter.effects';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { SupersmashbrosEffects } from './superSmashBros-ngrx/ssb.effects';
       OnepieceEffects,
       RickEffects,
       SupersmashbrosEffects,
+      HarrypotterEffects,
     ]),
   ]
 })

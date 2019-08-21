@@ -7,11 +7,10 @@ import { AuthService } from '@workspace/core-data';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app-nine';
+  title = 'Harry Potter Characters';
 
   links = [
     { path: '/projects', icon: 'home', title: 'Projects' },
-    { path: '/login', icon: 'account_circle', title: 'Login' }
   ];
 
   constructor(public authService: AuthService) {}

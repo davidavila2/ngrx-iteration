@@ -44,7 +44,7 @@ export { EightService } from './lib/eight/eight.service';
 export { Supersmashbros, emptySupersmashbro } from './lib/eight/eight';
 
 //nine
-export { Nine } from './lib/nine/nine';
+export { Nine, emptyHarrypotter } from './lib/nine/nine';
 export { NineService } from './lib/nine/nine.service';
 
 //ten
