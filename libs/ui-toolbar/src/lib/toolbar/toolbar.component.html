@@ -1,6 +1,6 @@
 <mat-toolbar class="mat-elevation-z4 d-flex justify-content-between" color="primary">
   <span>
-    <button mat-mini-fab *ngIf="isAuthenticated" (click)="isAuthenticated ? sidenav.toggle() : !sidenav.toggle()">
+    <button mat-mini-fab *ngIf="isAuthenticated" (click)="isAuthenticated ? sidenav.toggle() : !sidenav.toggle()" [disabled]="!isAuthenticated">
       <mat-icon>menu</mat-icon>
     </button>
     <span>

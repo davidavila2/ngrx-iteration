@@ -1,33 +1,42 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'workspace-projects-details',
   templateUrl: './projects-details.component.html',
   styleUrls: ['./projects-details.component.scss']
 })
-export class ProjectsDetailsComponent {
+export class ProjectsDetailsComponent implements OnInit  {
   currentTitle;
-  originalTitle
+  originalTitle;
+  myForm: FormGroup;
 
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
-
-  
-  @Input() group: FormGroup;
   @Input() set apex(value) {
     // changes value.name to value.id
     if (value) this.originalTitle = value.name;
     this.currentTitle = Object.assign({}, value)
   }
 
-  // @Input() set character(value: Character) {
-  //   this.selectedTitle = {...value}
-  // }
+  constructor(private fb: FormBuilder) { }
 
-  // save() {
-  //   this.saved.emit(this.group.value)
-  // }
+  ngOnInit() {
+    this.myForm = this.fb.group({
+      name: ['', [
+        Validators.required
+      ]],
+      function: ['', [
+        Validators.required
+      ]]
+    })
+  }
 
-  constructor() { }
+  get name() {
+    return this.myForm.get('name')
+  }
+
+  get function() {
+    return this.myForm.get('function')
+  }
 }

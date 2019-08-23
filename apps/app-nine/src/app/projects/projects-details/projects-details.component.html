@@ -10,8 +10,7 @@
   <form [formGroup]="myForm" (submit)="saved.emit(currentCharacter)">
     <mat-card-content>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Character" [(ngModel)]="currentCharacter.name" formControlName="name" name="name"
-          class="fixed-font">
+        <input matInput placeholder="Character" [(ngModel)]="currentCharacter.name" formControlName="name" name="name" class="fixed-font">
         <span *ngIf="name.invalid && name.touched">**Required Field</span>
       </mat-form-field>
 

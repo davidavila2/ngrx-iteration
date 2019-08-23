@@ -1,7 +1,7 @@
 <workspace-toolbar [title]="title" [sidenav]="sidenav" [isAuthenticated]="authService.isAuthenticated$.value"></workspace-toolbar>
 
 <mat-sidenav-container class="vh-100">
-  <mat-sidenav #sidenav mode="side" opened class="app-sidenav">
+  <mat-sidenav #sidenav mode="side" closed class="app-sidenav">
     <nav>
       <a mat-button class="nav-link" *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active">
         <mat-icon>{{link.icon}}</mat-icon>
