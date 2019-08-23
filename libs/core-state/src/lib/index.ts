@@ -8,7 +8,8 @@ import * as fromStarwars from './starwars-ngrx/starwars.reducer';
 import * as fromOnepiece from './onepiece-ngrx/onepiece.reducer';
 import * as fromRick from './ngrx-ricknmorty/ricknmorty.reducer';
 import * as fromSupersmashbros from './superSmashBros-ngrx/ssb.reducer';
-import * as fromHarrypotter from './harrypotter-ngrx/harrypotter.reducer'
+import * as fromHarrypotter from './harrypotter-ngrx/harrypotter.reducer';
+import * as fromApex from './apex-ngrx/apex.reducer'
 
 export interface AppState {
   icons: fromIcons.IconsState;
@@ -19,7 +20,8 @@ export interface AppState {
   onepiece: fromOnepiece.OnepieceState;
   rick: fromRick.RickState;
   supersmashbros: fromSupersmashbros.SupersmashbrosState;
-  harrypotter: fromHarrypotter.HarrypotterState
+  harrypotter: fromHarrypotter.HarrypotterState;
+  apex: fromApex.ApexState
 }
 
 export const reducers: ActionReducerMap<AppState> = {
@@ -31,5 +33,6 @@ export const reducers: ActionReducerMap<AppState> = {
   onepiece: fromOnepiece.OnepieceReducer,
   rick: fromRick.RickReducer,
   supersmashbros: fromSupersmashbros.SupersmashbrosReducer,
-  harrypotter: fromHarrypotter.HarrypotterReducer
+  harrypotter: fromHarrypotter.HarrypotterReducer,
+  apex: fromApex.ApexReducer
 }

@@ -43,6 +43,7 @@ export class HarrypotterEffects {
   deleteHarrypotter$ = this.dataPersistence.pessimisticUpdate(HarrypotterActionTypes.DELETE_HARRYPOTTER, {
     run: (action: DeleteHarrypotter, state: HarrypotterState) => {
       return of(action.payload).pipe(map((res: Nine) => new HarrypotterDeleted(action.payload)))
+      // return this.nineService.delete(action.payload).pipe(map(_ => new HarrypotterDeleted(action.payload)))
     },
     onError: (action: DeleteHarrypotter, error) => {
       console.error('Delete Harrypotter Effect', error)

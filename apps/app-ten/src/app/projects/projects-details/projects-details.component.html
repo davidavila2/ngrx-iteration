@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <!-- changed the ng if to id instead of lore -->
+        <span *ngIf="currentTitle.lore">{{originalTitle}}</span>
+        <span *ngIf="!currentTitle.lore">Select a Character</span>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form (submit)="saved.emit(currentTitle)">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Character" [(ngModel)]="currentTitle.name" name="name">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Function" [(ngModel)]="currentTitle.function" name="function">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">{{currentTitle.lore ? 'Updating' : 'Create'}}</button>
+      <button type="button" mat-button (click)="cancelled.emit(currentTitle)">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

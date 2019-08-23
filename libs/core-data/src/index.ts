@@ -39,14 +39,14 @@ export { OnepieceService } from './lib/onepiece/onepiece.service';
 export { RicknmortyDetails, Ricknmorty, emptyRicknmortyDetails} from './lib/ricknmorty/ricknmorty';
 export { RicknmortyService } from './lib/ricknmorty/ricknmorty.service';
 
-//Eight 
-export { EightService } from './lib/eight/eight.service';
-export { Supersmashbros, emptySupersmashbro } from './lib/eight/eight';
+//supersmashbros
+export { EightService } from './lib/supersmashbros/eight.service';
+export { Supersmashbros, emptySupersmashbro } from './lib/supersmashbros/eight';
 
-//nine
-export { Nine, emptyHarrypotter } from './lib/nine/nine';
-export { NineService } from './lib/nine/nine.service';
+//Harrypotter
+export { Nine, emptyHarrypotter } from './lib/harrypotter/nine';
+export { NineService } from './lib/harrypotter/nine.service';
 
-//ten
-export { Ten } from './lib/ten/ten';
-export { TenService } from './lib/ten/ten.service';
+//Apex
+export { Apexx, emptyApex } from './lib/apex/apexx';
+export { ApexService } from './lib/apex/apex.service';

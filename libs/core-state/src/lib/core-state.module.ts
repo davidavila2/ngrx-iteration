@@ -14,11 +14,12 @@ import { OnepieceEffects } from './onepiece-ngrx/onepiece.effects';
 import { RickEffects } from './ngrx-ricknmorty/ricknmorty.effects';
 import { SupersmashbrosEffects } from './superSmashBros-ngrx/ssb.effects';
 import { HarrypotterEffects } from './harrypotter-ngrx/harrypotter.effects';
+import { ApexEffects } from './apex-ngrx/apex.effects';
 
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     NxModule.forRoot(),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
@@ -34,6 +35,7 @@ import { HarrypotterEffects } from './harrypotter-ngrx/harrypotter.effects';
       RickEffects,
       SupersmashbrosEffects,
       HarrypotterEffects,
+      ApexEffects,
     ]),
   ]
 })

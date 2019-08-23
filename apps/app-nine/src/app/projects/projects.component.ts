@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NineService, Nine, emptyHarrypotter } from '@workspace/core-data';
+import { Nine, emptyHarrypotter } from '@workspace/core-data';
 import { MatDialog } from '@angular/material';
-import { NineDialogComponent } from '../nine-dialog/nine-dialog.component';
 import { Observable } from 'rxjs';
 import { HarrypotterFacade } from '@workspace/core-state';
 
@@ -12,7 +11,7 @@ import { HarrypotterFacade } from '@workspace/core-state';
 })
 export class ProjectsComponent implements OnInit {
   harrypotter$: Observable<Nine[]> = this.harrypotterFacade.harrypotter$
-  currentHarrypotter$: Observable<any> = this.harrypotterFacade.currentHarrypotter$
+  currentHarrypotter$: Observable<Nine> = this.harrypotterFacade.currentHarrypotter$
   isLoading$: Observable<boolean> = this.harrypotterFacade.isHarrypotterLoading$;
 
   constructor(
@@ -45,7 +44,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   alert(harrypotter) {
-    const confirmation = confirm(`Are you sure you want to delete ${harrypotter.id} ?`)
+    const confirmation = confirm(`Are you sure you want to delete ${harrypotter.name} ?`)
     if (confirmation) {
       this.harrypotterFacade.deleteHarrypotter(harrypotter)
     }
@@ -54,14 +53,4 @@ export class ProjectsComponent implements OnInit {
   cancel() {
     this.resetHarrypotter()
   }
-
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open(NineDialogComponent, {
-  //     width: '100%'
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('Dialog Closed');
-  //   })
-  // };
 }

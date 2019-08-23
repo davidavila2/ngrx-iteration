@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TenService } from './ten.service';
+import { TenService } from './apex.service';
 
 describe('TenService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

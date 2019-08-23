@@ -1,4 +1,4 @@
-export interface Ten {
+export interface Apexx {
   name: string,
   function: string,
   lore: string,
@@ -10,5 +10,8 @@ export interface CharacterInfo {
   age: number,
 }
 
-
-
+export const emptyApex = {
+  name: '',
+  function: '',
+  lore: '',
+}

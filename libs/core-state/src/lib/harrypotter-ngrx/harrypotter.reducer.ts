@@ -62,7 +62,7 @@ export function HarrypotterReducer(state = initialState, action: HarrypotterActi
       }
     }
     case HarrypotterActionTypes.HARRYPOTTER_DELETED: {
-      return adapter.removeOne(action.payload.image, {
+      return adapter.removeOne(action.payload.id, {
         ...state,
         isLoading: false
       })

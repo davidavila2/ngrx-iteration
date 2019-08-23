@@ -31,7 +31,6 @@ export class NineService {
     delete name.id;
     const generateId = Math.floor(Math.random() * (50 - 30 + 1) + 30);
     return of(({id: generateId, ...name}))
-    // return this.httpClient.get(this.getUrl(), name.id)
   }
 
   update(name) {
