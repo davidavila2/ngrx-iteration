@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center w-100 vh-100">
+  <mat-card class="d-flex justify-content-center align-content-center align-items-center flex-column align-self-center w-50" *ngIf="apexCharacter$ | async as apex">
+    <mat-card-header class="align-self-center">
+      <mat-card-title>
+        <h1>{{apex.name}}</h1>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <p>{{apex.function}}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="d-flex align-self-center flex-column">
+      <p>Real Name: {{apex.about?.real_name ? apex.about?.real_name : 'Unknown'}}</p>
+      <p>Age: {{apex.about?.age ? apex.about?.age : 'Unknown'}}</p>
+      <div>
+        <p>Lore:</p>
+        <div [innerHTML]="apex.lore ? apex.lore : 'Unknown'"></div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

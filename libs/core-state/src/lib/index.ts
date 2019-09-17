@@ -36,3 +36,16 @@ export const reducers: ActionReducerMap<AppState> = {
   harrypotter: fromHarrypotter.HarrypotterReducer,
   apex: fromApex.ApexReducer
 }
+
+export const defaultState: AppState = {
+  icons: { ids: [] } as fromIcons.IconsState,
+  pokemon: { ids: [] } as fromPokemon.PokemonState,
+  amiibo: { ids: [] } as fromAmiibo.AmiiboState,
+  marvel: { ids: [] } as fromMarvel.MarvelState,
+  starwars: { ids: [] } as fromStarwars.StarwarsState,
+  onepiece: { ids: [] } as fromOnepiece.OnepieceState,
+  rick: { ids: [] } as fromRick.RickState,
+  supersmashbros: { ids: [] } as fromSupersmashbros.SupersmashbrosState,
+  harrypotter: { ids: [] } as fromHarrypotter.HarrypotterState,
+  apex: { ids: [] } as fromApex.ApexState
+}

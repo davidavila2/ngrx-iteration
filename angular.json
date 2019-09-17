@@ -245,9 +245,9 @@
         }
       }
     },
-    "wild-card": {
-      "root": "libs/wild-card",
-      "sourceRoot": "libs/wild-card/src",
+    "not-found": {
+      "root": "libs/not-found",
+      "sourceRoot": "libs/not-found/src",
       "projectType": "library",
       "prefix": "workspace",
       "architect": {
@@ -255,8 +255,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/wild-card/tsconfig.lib.json",
-              "libs/wild-card/tsconfig.spec.json"
+              "libs/not-found/tsconfig.lib.json",
+              "libs/not-found/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -264,9 +264,9 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "libs/wild-card/jest.config.js",
-            "tsConfig": "libs/wild-card/tsconfig.spec.json",
-            "setupFile": "libs/wild-card/src/test-setup.ts"
+            "jestConfig": "libs/not-found/jest.config.js",
+            "tsConfig": "libs/not-found/tsconfig.spec.json",
+            "setupFile": "libs/not-found/src/test-setup.ts"
           }
         }
       },
@@ -394,9 +394,9 @@
         }
       }
     },
-    "dashboard": {
-      "root": "apps/dashboard/",
-      "sourceRoot": "apps/dashboard/src",
+    "material-icons": {
+      "root": "apps/material-icons/",
+      "sourceRoot": "apps/material-icons/src",
       "projectType": "application",
       "prefix": "workspace",
       "schematics": {
@@ -408,16 +408,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/dashboard",
-            "index": "apps/dashboard/src/index.html",
-            "main": "apps/dashboard/src/main.ts",
-            "polyfills": "apps/dashboard/src/polyfills.ts",
-            "tsConfig": "apps/dashboard/tsconfig.app.json",
+            "outputPath": "dist/apps/material-icons",
+            "index": "apps/material-icons/src/index.html",
+            "main": "apps/material-icons/src/main.ts",
+            "polyfills": "apps/material-icons/src/polyfills.ts",
+            "tsConfig": "apps/material-icons/tsconfig.app.json",
             "assets": [
-              "apps/dashboard/src/favicon.ico",
-              "apps/dashboard/src/assets"
+              "apps/material-icons/src/favicon.ico",
+              "apps/material-icons/src/assets"
             ],
-            "styles": ["apps/dashboard/src/styles.scss"],
+            "styles": ["apps/material-icons/src/styles.scss"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -425,8 +425,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/dashboard/src/environments/environment.ts",
-                  "with": "apps/dashboard/src/environments/environment.prod.ts"
+                  "replace": "apps/material-icons/src/environments/environment.ts",
+                  "with": "apps/material-icons/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -451,26 +451,26 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dashboard:build"
+            "browserTarget": "material-icons:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dashboard:build:production"
+              "browserTarget": "material-icons:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dashboard:build"
+            "browserTarget": "material-icons:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/dashboard/tsconfig.app.json",
-              "apps/dashboard/tsconfig.spec.json"
+              "apps/material-icons/tsconfig.app.json",
+              "apps/material-icons/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -478,35 +478,35 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "apps/dashboard/jest.config.js",
-            "tsConfig": "apps/dashboard/tsconfig.spec.json",
-            "setupFile": "apps/dashboard/src/test-setup.ts"
+            "jestConfig": "apps/material-icons/jest.config.js",
+            "tsConfig": "apps/material-icons/tsconfig.spec.json",
+            "setupFile": "apps/material-icons/src/test-setup.ts"
           }
         }
       }
     },
-    "dashboard-e2e": {
-      "root": "apps/dashboard-e2e",
+    "material-icons-e2e": {
+      "root": "apps/material-icons-e2e",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@nrwl/builders:cypress",
           "options": {
-            "cypressConfig": "apps/dashboard-e2e/cypress.json",
-            "tsConfig": "apps/dashboard-e2e/tsconfig.e2e.json",
-            "devServerTarget": "dashboard:serve"
+            "cypressConfig": "apps/material-icons-e2e/cypress.json",
+            "tsConfig": "apps/material-icons-e2e/tsconfig.e2e.json",
+            "devServerTarget": "material-icons:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "dashboard:serve:production"
+              "devServerTarget": "material-icons:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/dashboard-e2e/tsconfig.e2e.json",
+            "tsConfig": "apps/material-icons-e2e/tsconfig.e2e.json",
             "exclude": ["**/node_modules/**"]
           }
         }
@@ -1596,9 +1596,9 @@
         }
       }
     },
-    "app-ten": {
-      "root": "apps/app-ten/",
-      "sourceRoot": "apps/app-ten/src",
+    "apex-legends": {
+      "root": "apps/apex-legends/",
+      "sourceRoot": "apps/apex-legends/src",
       "projectType": "application",
       "prefix": "workspace",
       "schematics": {
@@ -1610,16 +1610,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/app-ten",
-            "index": "apps/app-ten/src/index.html",
-            "main": "apps/app-ten/src/main.ts",
-            "polyfills": "apps/app-ten/src/polyfills.ts",
-            "tsConfig": "apps/app-ten/tsconfig.app.json",
+            "outputPath": "dist/apps/apex-legends",
+            "index": "apps/apex-legends/src/index.html",
+            "main": "apps/apex-legends/src/main.ts",
+            "polyfills": "apps/apex-legends/src/polyfills.ts",
+            "tsConfig": "apps/apex-legends/tsconfig.app.json",
             "assets": [
-              "apps/app-ten/src/favicon.ico",
-              "apps/app-ten/src/assets"
+              "apps/apex-legends/src/favicon.ico",
+              "apps/apex-legends/src/assets"
             ],
-            "styles": ["apps/app-ten/src/styles.scss"],
+            "styles": ["apps/apex-legends/src/styles.scss"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -1627,8 +1627,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/app-ten/src/environments/environment.ts",
-                  "with": "apps/app-ten/src/environments/environment.prod.ts"
+                  "replace": "apps/apex-legends/src/environments/environment.ts",
+                  "with": "apps/apex-legends/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -1653,26 +1653,26 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-ten:build"
+            "browserTarget": "apex-legends:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-ten:build:production"
+              "browserTarget": "apex-legends:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-ten:build"
+            "browserTarget": "apex-legends:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/app-ten/tsconfig.app.json",
-              "apps/app-ten/tsconfig.spec.json"
+              "apps/apex-legends/tsconfig.app.json",
+              "apps/apex-legends/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
@@ -1680,35 +1680,35 @@
         "test": {
           "builder": "@nrwl/builders:jest",
           "options": {
-            "jestConfig": "apps/app-ten/jest.config.js",
-            "tsConfig": "apps/app-ten/tsconfig.spec.json",
-            "setupFile": "apps/app-ten/src/test-setup.ts"
+            "jestConfig": "apps/apex-legends/jest.config.js",
+            "tsConfig": "apps/apex-legends/tsconfig.spec.json",
+            "setupFile": "apps/apex-legends/src/test-setup.ts"
           }
         }
       }
     },
-    "app-ten-e2e": {
-      "root": "apps/app-ten-e2e",
+    "apex-legends-e2e": {
+      "root": "apps/apex-legends-e2e",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@nrwl/builders:cypress",
           "options": {
-            "cypressConfig": "apps/app-ten-e2e/cypress.json",
-            "tsConfig": "apps/app-ten-e2e/tsconfig.e2e.json",
-            "devServerTarget": "app-ten:serve"
+            "cypressConfig": "apps/apex-legends-e2e/cypress.json",
+            "tsConfig": "apps/apex-legends-e2e/tsconfig.e2e.json",
+            "devServerTarget": "apex-legends:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app-ten:serve:production"
+              "devServerTarget": "apex-legends:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/app-ten-e2e/tsconfig.e2e.json",
+            "tsConfig": "apps/apex-legends-e2e/tsconfig.e2e.json",
             "exclude": ["**/node_modules/**"]
           }
         }

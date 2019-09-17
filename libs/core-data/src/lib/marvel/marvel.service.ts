@@ -12,8 +12,6 @@ export class MarvelService {
 
   constructor(private httpClient: HttpClient) { }
 
-
-
   all() {
     return this.httpClient.get(this.getUrl()).pipe(
       map((res: any) => res.data.results)

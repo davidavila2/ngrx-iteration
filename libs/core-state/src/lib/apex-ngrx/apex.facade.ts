@@ -5,7 +5,7 @@ import * as ApexAction from './apex.actions'
 import { ApexActionTypes } from './apex.actions'
 import { ApexState } from './apex.reducer';
 import { selectAllApex, selectCurrentApex, selectApexLoadingStatus } from './apex.selectors';
-import { Apexx } from '@workspace/core-data';
+import { Apex } from '@workspace/core-data';
 
 
 @Injectable({ providedIn: 'root' })
@@ -32,15 +32,15 @@ export class ApexFacade {
     this.store.dispatch(new ApexAction.LoadApex())
   }
 
-  createApex(apex: Apexx) {
+  createApex(apex: Apex) {
     this.store.dispatch(new ApexAction.AddApex(apex))
   }
 
-  updateApex(apex: Apexx) {
+  updateApex(apex: Apex) {
     this.store.dispatch(new ApexAction.UpdateApex(apex))
   }
 
-  deleteApex(apex: Apexx) {
+  deleteApex(apex: Apex) {
     this.store.dispatch(new ApexAction.DeleteApex(apex))
   }
 }

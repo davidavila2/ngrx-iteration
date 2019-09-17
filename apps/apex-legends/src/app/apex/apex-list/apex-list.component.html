@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Apex Character</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  <mat-card-content *ngIf="!loading">
+    <mat-list>
+      <mat-list-item *ngFor="let character of apex" (click)="selected.emit(character)">
+        <h3 mat-line>
+          {{character.name}}
+        </h3>
+        <p mat-line>
+          {{character.function}}
+        </p>
+        <button mat-icon-button (click)="$event.stopImmediatePropagation()" [routerLink]="character.id">
+          <mat-icon class="material-icons-outlined">info</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(character, $event)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

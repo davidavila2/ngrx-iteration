@@ -31,12 +31,12 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  login(loginCredentials: {username: string, password: string}) {
+  login(loginCredentials: {username: string, password: string, app_name: string}) {
     const url = 'https://levelup-authenticated-api.herokuapp.com/auth/login';
 
     return this.httpClient.post(url, loginCredentials).pipe(
       tap((res: { access_token: string }) => this.setToken(res.access_token)),
-      tap(_ => this.router.navigate(['/projects']))
+      tap(_ => this.router.navigate([`/${loginCredentials.app_name}`]))
     ).subscribe();
   }
 }

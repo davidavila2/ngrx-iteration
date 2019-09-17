@@ -1,4 +1,5 @@
 export { CoreStateModule } from './lib/core-state.module';
+export { defaultState } from './lib/index';
 export { ApexFacade } from './lib/apex-ngrx/apex.facade';
 export { HarrypotterFacade } from './lib/harrypotter-ngrx/harrypotter.facade';
 export { SupersmashbroFacade } from './lib/superSmashBros-ngrx/ssb.facade';

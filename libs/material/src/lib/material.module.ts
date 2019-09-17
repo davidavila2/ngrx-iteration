@@ -22,7 +22,7 @@ import  {
   MatDialogModule,
   MatPaginatorModule,
   MatSortModule,
-  MatProgressBarModule
+  MatProgressBarModule,
 }  from  '@angular/material';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
 

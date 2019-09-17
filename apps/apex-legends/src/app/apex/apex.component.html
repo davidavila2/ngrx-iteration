@@ -1,0 +1,19 @@
+<div class="m-0 d-flex justify-content-center mt-3">
+  <div class="w-50 ml-3 mr-2">
+    <workspace-apex-list
+      [apex]="apex$ | async"
+      [loading]="isLoading$ | async"
+      (selected)="selectApex($event)"
+      (deleted)="delete($event)"
+    ></workspace-apex-list>
+  </div>
+
+  <div class="w-50 mr-3 ml-2">
+    <workspace-apex-details
+      [apex]="currentApex$ | async"
+      [form]="form"
+      (saved)="saveApex($event)"
+      (cancelled)="resetApex()"
+    ></workspace-apex-details>
+  </div>
+</div>

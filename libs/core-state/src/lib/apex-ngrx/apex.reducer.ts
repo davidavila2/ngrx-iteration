@@ -1,14 +1,14 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
-import { Apexx } from '@workspace/core-data';
+import { Apex } from '@workspace/core-data';
 import { ApexActions, ApexActionTypes } from './apex.actions';
 
 
-export interface ApexState extends EntityState<Apexx> {
+export interface ApexState extends EntityState<Apex> {
   selectedApexId: string | null;
   isLoading: boolean
 }
 
-export const adapter: EntityAdapter<Apexx> = createEntityAdapter<Apexx>();
+export const adapter: EntityAdapter<Apex> = createEntityAdapter<Apex>();
 export const initialState: ApexState = adapter.getInitialState({
   selectedApexId: null,
   isLoading: false

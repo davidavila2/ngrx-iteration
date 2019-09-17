@@ -11,6 +11,14 @@ export class RicknmortyService {
 
   constructor(private httpClient: HttpClient) { }
 
+  all() {
+    return this.httpClient.get(this.getUrl()).pipe(map((res: any) => res.results));
+  }
+
+  getUrl() {
+    return `${BASE_URL}`
+  }
+
   findOne(rickId) {
     return this.httpClient.get(this.getUrlForId(rickId))
   }
@@ -27,15 +35,7 @@ export class RicknmortyService {
     return this.httpClient.delete(this.getUrlForId(rickId))
   }
 
-  getUrl() {
-    return `${BASE_URL}`
-  }
-
   getUrlForId(id) {
     return `${this.getUrl}/${id}`
-  }
-
-  all() {
-    return this.httpClient.get(this.getUrl()).pipe(map((res: any) => res.results));
   }
 }

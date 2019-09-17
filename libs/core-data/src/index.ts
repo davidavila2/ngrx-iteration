@@ -9,6 +9,8 @@ export { TokenInterceptorService as TokenInterceptor } from './lib/auth/token-in
 export { ItemsService } from './lib/items/items.service';
 export { Item, emptyItem } from './lib/items/items.model';
 
+// Notify
+export { NotifyService} from './lib/notify/notify.service';
 
 // Logos
 export { LogoService } from './lib/logos/logo.service';
@@ -48,5 +50,5 @@ export { Nine, emptyHarrypotter } from './lib/harrypotter/nine';
 export { NineService } from './lib/harrypotter/nine.service';
 
 //Apex
-export { Apexx, emptyApex } from './lib/apex/apexx';
+export { Apex, emptyApex } from './lib/apex/apex';
 export { ApexService } from './lib/apex/apex.service';

@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@workspace/core-data';
 
 @Component({
@@ -11,25 +11,23 @@ import { AuthService } from '@workspace/core-data';
 export class LoginComponent implements OnInit {
   @Input() isAuthenticated: boolean
   form: FormGroup;
+  app_name: string;
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.activatedRoute.data.subscribe(data => this.app_name = data.app_name)
     this.initForm();
   }
 
   login() {
     if (this.form.valid) {
-      this.authService.login(this.form.value);
+      this.authService.login({...this.form.value, app_name: this.app_name});
     }
-  }
-
-  goProjects() {
-      this.router.navigate(['/projects'])
   }
 
   private initForm() {

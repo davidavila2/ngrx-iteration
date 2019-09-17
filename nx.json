@@ -26,7 +26,7 @@
     "languages-e2e": {
       "tags": []
     },
-    "wild-card": {
+    "not-found": {
       "tags": []
     },
     "power-rangers": {
@@ -35,10 +35,10 @@
     "power-rangers-e2e": {
       "tags": []
     },
-    "dashboard": {
+    "material-icons": {
       "tags": []
     },
-    "dashboard-e2e": {
+    "material-icons-e2e": {
       "tags": []
     },
     "icons": {
@@ -98,10 +98,10 @@
     "app-nine-e2e": {
       "tags": []
     },
-    "app-ten": {
+    "apex-legends": {
       "tags": []
     },
-    "app-ten-e2e": {
+    "apex-legends-e2e": {
       "tags": []
     },
     "pokemon-ngrx": {

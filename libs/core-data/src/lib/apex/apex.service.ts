@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
-import { Apexx } from './apexx';
+import { Apex } from './apex';
 import { map } from 'rxjs/operators';
 
 const BASE_URL = 'https://apex-data-set.herokuapp.com/'
@@ -13,37 +13,43 @@ export class ApexService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUrl() {
-    return `${BASE_URL}`
-  }
-
-  getUrlForId(name) {
-    return `${this.getUrl}/${name}`
-  }
-
   all() {
     return this.httpClient.get(this.getUrl()).pipe(
-      map((result: any[]) => result.map((res, index) => ({id: ++index, ...res})))
+      map((result: any[]) => result.map((res, index) => ({ id: ++index, ...res })))
     );
   }
 
-  findOne(apexId) {
-    return this.httpClient.get(this.getUrlForId(apexId))
+  findOne(apexId: number) {
+    return this.httpClient.get(this.getUrlForId(apexId));
   }
 
-  create(apex) {
+  create(apex: Apex) {
     delete apex.id;
     const generateId = Math.floor(Math.random() * (50 - 12 + 1) + 12);
-    return of(({id: generateId, ...apex}))
-    // return this.httpClient.post(this.getUrl(), apex)
+    return of(({ id: this.generateQuickGuid(), ...apex }));
   }
 
-  update(apex) {
-    return this.httpClient.patch(this.getUrlForId(apex.id), apex)
+  update(apex: Apex) {
+    return this.httpClient.patch(this.getUrlForId(apex.id), apex);
   }
 
-  delete(apexId) {
-    return this.httpClient.delete(this.getUrlForId(apexId))
+  delete(apexId: number) {
+    return this.httpClient.delete(this.getUrlForId(apexId));
   }
+
+  private getUrl() {
+    return BASE_URL;
+  }
+
+  private getUrlForId(id: number) {
+    return `${this.getUrl}/${id}`;
+  }
+
+  generateQuickGuid() {
+    return Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15);
+  }
+
+
 
 }
