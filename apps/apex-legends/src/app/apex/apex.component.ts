@@ -21,23 +21,23 @@ export class ApexComponent implements OnInit {
     private apexFacade: ApexFacade
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.apexFacade.loadApex();
     this.apexFacade.mutations$.subscribe(_ => this.resetApex());
     this.initForm();
   }
 
-  resetApex() {
+  resetApex(): void {
     this.form.reset();
     this.selectApex({ id: null } as Apex);
   }
 
-  selectApex(apex: Apex) {
+  selectApex(apex: Apex): void {
     this.apexFacade.selectApex(apex.id);
     this.form.patchValue(apex);
   }
 
-  saveApex(apex: Apex) {
+  saveApex(apex: Apex): void {
     if (this.form.invalid) return;
 
     if (apex.id) {
@@ -47,14 +47,14 @@ export class ApexComponent implements OnInit {
     }
   }
 
-  delete(apex: Apex) {
+  delete(apex: Apex): void {
     const confirmation = confirm(`Are you sure you want to delete ${apex.name} ?`);
     if (confirmation) {
       this.apexFacade.deleteApex(apex);
     }
   }
 
-  private initForm() {
+  private initForm(): void {
     this.form = this.fb.group({
       id: null,
       name: ['', Validators.compose([Validators.required])],

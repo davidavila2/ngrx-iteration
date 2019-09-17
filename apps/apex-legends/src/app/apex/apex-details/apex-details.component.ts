@@ -8,22 +8,22 @@ import { Apex } from '@workspace/core-data';
   styleUrls: ['./apex-details.component.scss']
 })
 export class ApexDetailsComponent {
-  currentTitle;
-  originalTitle;
+  currentApex: Apex;
+  originalTitle: string;
   
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
   @Input() form: FormGroup;
   @Input() set apex(value: Apex) {
     if (value) this.originalTitle = value.name;
-    this.currentTitle = Object.assign({}, value);
+    this.currentApex = Object.assign({}, value);
   }
 
-  save() {
+  save(): void {
     this.saved.emit(this.form.value);
   }
 
-  cancel() {
+  cancel(): void {
     this.cancelled.emit();
   }
 }

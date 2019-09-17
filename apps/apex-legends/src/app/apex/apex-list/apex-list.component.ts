@@ -13,7 +13,7 @@ export class ApexListComponent {
   @Output() selected = new EventEmitter()
   @Output() deleted = new EventEmitter()
 
-  delete(character: Apex, event: any) {
+  delete(character: Apex, event: any): void {
     event.stopImmediatePropagation();
     this.deleted.emit(character);
   }

@@ -16,7 +16,7 @@ export class ApexItemsComponent implements OnInit {
     private apexFacade: ApexFacade
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.apexFacade.loadApex();
     this.route.params.subscribe(param => this.apexFacade.selectApex(param['id']));
     this.apexCharacter$ = this.apexFacade.currentApex$;

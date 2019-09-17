@@ -8,6 +8,7 @@ export interface Amiibo {
   gameSeries: string,
   image: string,
   name: string
+  id: string
 }
 
 export const emptyAmiibo = {
