@@ -17,4 +17,8 @@ export class ApexListComponent {
     event.stopImmediatePropagation();
     this.deleted.emit(character);
   }
+
+  select(character: Apex) {
+    this.selected.emit(character)
+  }
 }

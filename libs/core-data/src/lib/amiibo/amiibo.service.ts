@@ -22,11 +22,11 @@ export class AmiiboService {
     return this.httpClient.patch<Amiibo>(this.getUrlForId(amiibo.id), amiibo)
   }
 
-  delete(amiiboId: number): Observable<number> {
-    return this.httpClient.delete<number>(this.getUrlForId(amiiboId))
+  delete(amiiboId: Amiibo): Observable<Amiibo> {
+    return this.httpClient.delete<Amiibo>(this.getUrlForId(amiiboId))
   }
   
-  all(): Observable<Amiibo> {
+  all(): Observable<Amiibo[]> {
     return this.httpClient.get(this.getUrl()).pipe(
       map((amiibo: any) => amiibo.amiibo)
     );

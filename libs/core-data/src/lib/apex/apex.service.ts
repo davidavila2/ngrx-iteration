@@ -5,12 +5,11 @@ import { Apex } from './apex';
 import { map } from 'rxjs/operators';
 
 const BASE_URL = 'https://apex-data-set.herokuapp.com/'
-
+import * as uuid  from 'uuid/v1';
 @Injectable({
   providedIn: 'root'
 })
 export class ApexService {
-  uuid = require('uuid/v1');
 
   constructor(private httpClient: HttpClient) { }
 
@@ -26,8 +25,7 @@ export class ApexService {
 
   create(apex: Apex): Observable<Apex> {
     delete apex.id;
-    // const generateId = Math.floor(Math.random() * (50 - 12 + 1) + 12);
-    return of(({ id: this.uuid(), ...apex }));
+    return of(({ id: uuid(), ...apex }));
   }
 
   update(apex: Apex): Observable<Apex> {
@@ -44,10 +42,5 @@ export class ApexService {
 
   private getUrlForId(id: number): string {
     return `${this.getUrl}/${id}`;
-  }
-
-  generateQuickGuid(): string {
-    return Math.random().toString(36).substring(2, 15) +
-      Math.random().toString(36).substring(2, 15);
   }
 }

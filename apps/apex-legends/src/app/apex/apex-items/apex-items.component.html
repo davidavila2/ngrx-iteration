@@ -8,13 +8,5 @@
         <p>{{apex.function}}</p>
       </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content class="d-flex align-self-center flex-column">
-      <p>Real Name: {{apex.about?.real_name ? apex.about?.real_name : 'Unknown'}}</p>
-      <p>Age: {{apex.about?.age ? apex.about?.age : 'Unknown'}}</p>
-      <div>
-        <p>Lore:</p>
-        <div [innerHTML]="apex.lore ? apex.lore : 'Unknown'"></div>
-      </div>
-    </mat-card-content>
   </mat-card>
 </div>
