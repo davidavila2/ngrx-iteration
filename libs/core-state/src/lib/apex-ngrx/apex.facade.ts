@@ -17,9 +17,9 @@ export class ApexFacade {
   mutations$ = this.actions$
     .pipe(
       filter(action => 
-        action.type === ApexActionTypes.ADD_APEX
-          || action.type === ApexActionTypes.UPDATE_APEX
-          || action.type === ApexActionTypes.DELETE_APEX)
+        action.type === ApexActionTypes.APEX_ADDED
+          || action.type === ApexActionTypes.APEX_UPDATED
+          || action.type === ApexActionTypes.APEX_DELETED)
     )
 
   constructor(private store: Store<ApexState>, private actions$: ActionsSubject) { }

@@ -7,7 +7,8 @@
       </h1>
     </mat-card-title>
   </mat-card-header>
-  <form [formGroup]="form" (submit)="saved.emit(form.value)">
+  <form [formGroup]="form" #formDirective="ngForm" 
+  (ngSubmit)="submitForm(form, formDirective)">
     <mat-card-content>
       <mat-form-field class="w-100">
         <input matInput placeholder="Character*" formControlName="name">
@@ -15,7 +16,7 @@
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button type="submit" mat-button color="primary" [disabled]="form.invalid" (click)="save()">
+      <button type="submit" mat-button color="primary" [disabled]="form.invalid">
         {{currentApex.id ? 'Update' : 'Create'}}
       </button>
       <button type="reset" mat-button (click)="cancel()">Cancel</button>

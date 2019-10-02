@@ -11,9 +11,6 @@
         <h3 mat-line>
           {{character.name}}
         </h3>
-        <p mat-line>
-          {{character.function}}
-        </p>
         <button mat-icon-button (click)="$event.stopImmediatePropagation()" [routerLink]="character.id">
           <mat-icon class="material-icons-outlined">info</mat-icon>
         </button>

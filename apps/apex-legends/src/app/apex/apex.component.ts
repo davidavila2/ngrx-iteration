@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Apex } from '@workspace/core-data';
 import { ApexFacade } from '@workspace/core-state';
 import { Observable } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormGroupDirective, Form } from '@angular/forms';
 
 @Component({
   selector: 'workspace-apex',
@@ -15,6 +15,7 @@ export class ApexComponent implements OnInit {
   apex$: Observable<Apex[]> = this.apexFacade.apex$;
   currentApex$: Observable<any> = this.apexFacade.currentApex$;
   isLoading$: Observable<boolean> = this.apexFacade.isApexLoading$;
+  formDirective: FormGroupDirective;
 
   constructor(
     private fb: FormBuilder,
@@ -29,6 +30,7 @@ export class ApexComponent implements OnInit {
 
   resetApex(): void {
     this.form.reset();
+    this.formDirective.resetForm();
     this.selectApex({ id: null } as Apex);
   }
 
@@ -37,13 +39,13 @@ export class ApexComponent implements OnInit {
     this.form.patchValue(apex);
   }
 
-  saveApex(apex: Apex): void {
+  saveApex(formDirective: FormGroupDirective): void {
     if (this.form.invalid) return;
-
-    if (apex.id) {
-      this.apexFacade.updateApex(apex);
+    this.formDirective = formDirective;
+    if (this.form.value.id) {
+      this.apexFacade.updateApex(this.form.value);
     } else {
-      this.apexFacade.createApex(apex);
+      this.apexFacade.createApex(this.form.value);
     }
   }
 
@@ -57,8 +59,7 @@ export class ApexComponent implements OnInit {
   private initForm(): void {
     this.form = this.fb.group({
       id: null,
-      name: ['', Validators.compose([Validators.required])],
-      function: ['', [Validators.compose([Validators.required])]]
+      name: ['', Validators.compose([Validators.required])]
     });
   }
 }

@@ -18,7 +18,7 @@ export class ApexListComponent {
     this.deleted.emit(character);
   }
 
-  select(character: Apex) {
+  select(character: Apex): void {
     this.selected.emit(character)
   }
 }
