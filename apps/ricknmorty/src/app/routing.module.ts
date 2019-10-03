@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProjectsComponent } from './projects/projects.component';
 import { LoginComponent } from '@workspace/ui-login';
 import { ProjectsItemComponent } from './projects/projects-item/projects-item.component';
-import { WildComponent } from '@workspace/wild-card';
 import { AuthGuard } from '@workspace/core-data';
+import { NotFoundModule } from '@workspace/not-found';
 
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'projects/:id', component: ProjectsItemComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'wild', component: WildComponent },
+  { path: 'wild', component: NotFoundModule },
   { path: '**', redirectTo: 'wild', pathMatch: 'full' },
 ]
 
